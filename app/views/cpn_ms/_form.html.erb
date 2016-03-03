@@ -1,0 +1,256 @@
+<%= form_for(@cpn_m) do |f| %>
+  <% if @cpn_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cpn_m.errors.count, "error") %> prohibited this cpn_m from being saved:</h2>
+
+      <ul>
+      <% @cpn_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<style type="text/css">
+
+.table1 th{
+ text-align:right;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+</style>
+<table class="table1">
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :クーポン種別 %></strong></th>
+    <td>
+
+ <select name="cpn_m[cpn_discnt_type]" id="cpn_discnt_type">
+   <option value="1">割引額</option>
+   <option value="2">割引率</option>
+ </select>
+
+    </td>
+  </tr>
+  </div>
+
+
+  <div class="field">
+  <tr>
+	<th><strong> <%= f.label :ID %></strong></th>
+    <td><%= f.number_field :cpn_id %></td>
+  </tr>
+  </div>
+
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :有効・無効フラグ %></strong></th>
+    <td>
+    <%= f.radio_button :cpn_st, 1 , {:checked => true}%> <%= f.label :rate_1, "有効" %>
+    <%= f.radio_button :cpn_st, 2 %> <%= f.label :rate_2, "無効" %>
+    </td>
+
+  </tr>
+  </div>
+
+  </div>
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :クーポンコード %></strong></th>
+    <td><%= f.text_field :cpn_cd %></td>
+  </tr>
+  </div>
+
+
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :クーポンタイトル %></strong></th>
+    <td><%= f.text_field :cpn_title %></td>
+  </tr>
+  </div>
+
+  <div class="field">
+<tr>
+
+    <th><strong></strong>
+
+      </th>
+    <td style="color: red"><%= f.label :' YYYY/MM/DD HH MM形式で入力してください' %></td>
+
+
+
+  <div class="field">
+<tr>
+
+    <th><strong>有効期限</strong>
+      <%= f.label :開始日時 %></th>
+    <td>
+<!--
+
+      <%= f.datetime_select :start_dt,{} ,class: 'form-control',value: Time.now.strftime("%Y-%m-%d") %>
+  <%= f.text_field :start_dt, class: 'form-control date-picker' %>
+-->
+
+
+    <%= f.date_field :start_dt %>
+    <%= f.text_field :start_dt,:size=>"1" %> :
+    <%= f.text_field :start_dt,:size=>"1" %>
+
+
+    　　　<!--
+  <div class="form-group form-inline">
+    -->
+
+
+
+    ～</td>
+<!--
+  <div class="form-group form-inline">
+-->
+    <th><strong><%= f.label :終了日時 %></strong></th>
+<td>    
+    <%= f.date_field :expiration_dt %>
+    <%= f.text_field :expiration_dt,:size=>"1" %> :
+    <%= f.text_field :expiration_dt,:size=>"1" %>
+    </td>
+</tr>
+</div>
+
+
+
+
+
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :対象 %></strong></th>
+    <td>
+  <select name="cpn_m[cpn_cls]" id="cpn_cls">
+   <option value="1">単価割引</option>
+   <option value="2">総額割引</option>
+  </select>
+  </td>
+  </tr>
+  </div>
+
+  <div class="field">
+  <tr>
+    <th><stong><%= f.label :対象製品条件 %></strong></th>
+    <td><%= f.text_field :trgt_prd_cndtn %></td>
+
+  </tr>
+
+
+  </div>
+
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :対象除外製品条件 %></strong></th>
+    <td><%= f.text_field :excld_prd_cndtn %></td>
+  </tr>
+
+  </div>
+
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :ベンダー仕切割引 %></strong></th>
+    <td>
+    <%= f.radio_button :vndr_cpn, 1 , {:checked => true}%> <%= f.label :rate_1, "有" %>
+    <%= f.radio_button :vndr_cpn, 2 %> <%= f.label :rate_2, "無" %>
+
+    </td>
+ <!--   <td><%= f.text_field :vndr_cpn %></td> -->
+  </tr>
+
+  </div>
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :使用回数 %></strong></th>
+    <td><%= f.text_field :use_limit %></td>
+  </tr>
+  </div>
+
+  </div>
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :販売先コード %></strong></th>
+　   <td>
+      <%= f.fields_for :cpn_m_sales_cntcts do |f2| %>
+        <%= f2.text_field :accnt_cd_sales_cntct %>
+ 
+        <%= f2.number_field :cpn_id %>
+
+      <% end %>
+　   </td>
+  </tr>
+  </div>
+
+  </div>
+  <div class="field">
+  <tr>
+    <th><strong><%= f.label :メモ欄 %></strong></th>
+    <td><%= f.text_field :memo %></td>
+  </tr>
+  </div>
+
+
+</table>
+
+<style type="text/css">
+
+.table2 th{
+ text-align:center;
+  border:1;
+  background-color: #999999;
+  color:white;
+}
+</style>
+<table class="table2">
+<h3>単価割引設定　　　　　　　　　注文総額割引設定</h3>
+    <tr>
+    <th><strong><%= f.label :割引額・率 %></strong></th>
+    <th><strong><%= f.label :注文総額価格帯 %></strong></th>
+    <th><strong><%= f.label :割引額・率 %></strong></th>
+    </tr>
+
+    <tr>
+    <td><%= f.number_field :dscnt_value %></td>
+      <%= f.fields_for :cpn_m_total_sales_dscnts do |f3| %>
+        <td><%= f3.text_field :sales_range_min_value %></td>
+        <td><%= f3.text_field :dscnt_value %></td>
+<!--
+
+        <%= f3.number_field :cpn_id %>       
+        <%= f3.number_field :sales_range_no %>
+-->
+      <% end %>
+    </tr>
+<!--
+    <tr>
+    <td>　　　　　　　　　</td>
+    <td><%= f.text_field :memo %></td>
+    <td><%= f.text_field :memo %></td>
+    </tr>
+
+    <tr>
+    <td>　　　　　　　　　</td>
+    <td><%= f.text_field :memo %></td>
+    <td><%= f.text_field :memo %></td>
+    </tr>
+
+    <tr>
+    <td>　　　　　　　　　</td>
+    <td><%= f.text_field :memo %></td>
+    <td><%= f.text_field :memo %></td>
+    </tr>
+-->
+</table>
+
+
+  <div class="actions">
+
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
