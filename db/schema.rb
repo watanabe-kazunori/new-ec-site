@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303153141) do
+ActiveRecord::Schema.define(version: 20160303153142) do
 
   create_table "cpn_m_sales_cntcts", force: :cascade do |t|
     t.integer  "cpn_id",               limit: 4,  null: false, unsigned: true
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20160303153141) do
     t.integer  "cpn_m_id",             limit: 4
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+  end
+
+  create_table "cpn_m_total_sales_dscnts", force: :cascade do |t|
+    t.integer  "cpn_id",                limit: 4,                          default: 0, null: false, unsigned: true
+    t.integer  "sales_range_no",        limit: 4,                          default: 0, null: false, unsigned: true
+    t.decimal  "sales_range_min_value",           precision: 20, scale: 2,             null: false
+    t.decimal  "dscnt_value",                     precision: 20, scale: 2
+    t.decimal  "dscnt_rate",                      precision: 5,  scale: 2
+    t.integer  "cpn_m_id",              limit: 4
+    t.datetime "created_at",                                                           null: false
+    t.datetime "updated_at",                                                           null: false
   end
 
   create_table "cpn_ms", force: :cascade do |t|
