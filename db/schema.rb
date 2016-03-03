@@ -63,6 +63,27 @@ ActiveRecord::Schema.define(version: 20160303070658) do
     t.integer  "lst_upd_usr",      limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+
+ActiveRecord::Schema.define(version: 20160303153140) do
+
+  create_table "cpn_ms", force: :cascade do |t|
+    t.integer  "cpn_id",          limit: 4,                                         null: false
+    t.string   "cpn_cd",          limit: 30,                                        null: false
+    t.string   "cpn_st",          limit: 1,                                         null: false
+    t.string   "cpn_title",       limit: 2000,                                      null: false
+    t.string   "cpn_cls",         limit: 1,                                         null: false
+    t.string   "cpn_discnt_type", limit: 1,                                         null: false
+    t.string   "vndr_cpn",        limit: 1,                                         null: false
+    t.integer  "use_limit",       limit: 4,                             default: 0, null: false
+    t.datetime "start_dt",                                                          null: false
+    t.datetime "expiration_dt"
+    t.decimal  "dscnt_value",                  precision: 20, scale: 2
+    t.decimal  "dscnt_rate",                   precision: 5,  scale: 2
+    t.string   "trgt_prd_cndtn",  limit: 2000
+    t.string   "excld_prd_cndtn", limit: 2000
+    t.string   "memo",            limit: 2000
+    t.integer  "cpn_m_id",        limit: 4
+
   end
 
 end
