@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :accnt_staff_ms
+  root :to => "top#index"
+  resources :accnt_ms
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

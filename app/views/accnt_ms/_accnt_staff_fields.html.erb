@@ -1,0 +1,22 @@
+<%= fields_for(@accnt_staff_m) do |ff| %>
+ <table class="contents-buttom" >
+  <thead>
+    <tr>  
+      <th>担当者氏名</th>
+      <th>担当者氏名（英語）</th>
+      <th>担当部署名</th>
+      <th>Eメールアドレス</th>
+      <th>携帯電話番号</th>
+      <th></th>
+    </tr>
+  </thead>
+    <tr>
+      <td><%= ff.text_field 'accnt_staff_m','staff_name' %></td>
+      <td><%= ff.text_field 'accnt_staff_m','staff_name_e' %></td>
+      <td><%= ff.text_field 'accnt_staff_m','dept_name' %></td>
+      <td><%= ff.text_field 'accnt_staff_m','email' %></td>
+      <td><%= ff.text_field 'accnt_staff_m','tel' %></td>
+      <td>[メール送付]</td> 
+    </tr>
+  </table><br>
+<% end %> 
