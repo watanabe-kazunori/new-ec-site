@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
-# Use sqlite3 as the database for Active Record
-gem 'mysql2'
+gem 'rails', '4.2.5.1'
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -40,7 +40,28 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'therubyracer', platforms: :ruby
+#gem 'bcrypt-ruby', '~> 3.1.0', require: 'bcrypt'
+gem 'nokogiri', '~> 1.6.1'
+gem 'rails-i18n', '~> 4.0.1'
+gem 'foreigner', '~> 1.6.1'
+gem 'kaminari', '~> 0.15.1'
+#gem 'coffee-script-source', '1.8.0'
+gem 'activerecord-mysql-unsigned'
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'jquery-turbolinks'
+gem 'bootstrap3-datetimepicker-rails'
+gem 'twitter-bootstrap-rails' # Bootstrapの本体
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'composite_primary_keys'
+
+gem 'date_validator', '~> 0.7.0'
+gem "select2-rails"
+gem 'devise', '3.0.0.rc' 
+gem 'protected_attributes'
+gem 'ransack'
