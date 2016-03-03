@@ -1,0 +1,91 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  sku_dvlpr: MyString
+  sku_source_prd: MyString
+  prd_name: MyString
+  prd_name_subtitle: MyString
+  prd_dvlpr_org_name: MyString
+  prd_ctgry_cd: MyString
+  prd_type: MyString
+  sp_prd_type: MyString
+  set_prd_f: MyString
+  set_prd_type: MyString
+  sale_f: MyString
+  rcvng_plcnt_prd_f: MyString
+  dlvry_ld_time: MyString
+  db_prd_dlvry_mthd: MyString
+  lic_type: MyString
+  lic_from: 1
+  lic_to: 1
+  dstrbtr_disp_f: MyString
+  prd_st: MyString
+  acdmc_lic_f: MyString
+  prd_dlvry_mthd: MyString
+  prd_desc: MyString
+  prd_note: MyString
+  prd_notice: MyString
+  prd_other_info: MyString
+  url_prd: MyString
+  url_install_guid: MyString
+  url_lic_auth_guid: MyString
+  url_installer: MyString
+  url_prd_image: MyString
+  url_dl: MyString
+  memo: MyString
+  subscription_lic_term: 1
+  subscription_lic_term_unit: MyString
+  mnt_lic_term: 1
+  mnt_lic_term_unit: MyString
+  accnt_cd_dvlpr: MyString
+  accnt_cd_vndr: MyString
+  rgstr_dt: 2016-03-03 21:16:12
+  rgstr_usr: 1
+  lst_upd_dt: 2016-03-03 21:16:12
+  lst_upd_usr: 1
+
+two:
+  sku: MyString
+  sku_dvlpr: MyString
+  sku_source_prd: MyString
+  prd_name: MyString
+  prd_name_subtitle: MyString
+  prd_dvlpr_org_name: MyString
+  prd_ctgry_cd: MyString
+  prd_type: MyString
+  sp_prd_type: MyString
+  set_prd_f: MyString
+  set_prd_type: MyString
+  sale_f: MyString
+  rcvng_plcnt_prd_f: MyString
+  dlvry_ld_time: MyString
+  db_prd_dlvry_mthd: MyString
+  lic_type: MyString
+  lic_from: 1
+  lic_to: 1
+  dstrbtr_disp_f: MyString
+  prd_st: MyString
+  acdmc_lic_f: MyString
+  prd_dlvry_mthd: MyString
+  prd_desc: MyString
+  prd_note: MyString
+  prd_notice: MyString
+  prd_other_info: MyString
+  url_prd: MyString
+  url_install_guid: MyString
+  url_lic_auth_guid: MyString
+  url_installer: MyString
+  url_prd_image: MyString
+  url_dl: MyString
+  memo: MyString
+  subscription_lic_term: 1
+  subscription_lic_term_unit: MyString
+  mnt_lic_term: 1
+  mnt_lic_term_unit: MyString
+  accnt_cd_dvlpr: MyString
+  accnt_cd_vndr: MyString
+  rgstr_dt: 2016-03-03 21:16:12
+  rgstr_usr: 1
+  lst_upd_dt: 2016-03-03 21:16:12
+  lst_upd_usr: 1
