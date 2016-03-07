@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :serial_ms
   resources :prd_ms
   resources :cpn_m_total_sales_dscnts
   resources :cpn_m_sales_cntcts
+=======
+  resources :accnt_staff_ms
+  root :to => "top#index"
+  resources :accnt_ms
+>>>>>>> bccf02f6b1126e3f0a46827d2d20517a423bd780
   resources :cpn_ms
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
