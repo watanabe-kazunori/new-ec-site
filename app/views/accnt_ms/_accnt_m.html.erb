@@ -1,17 +1,17 @@
 <%= form_for(@accnt_m) do |f| %>
-<div class="container">
-  <table class="contents-top">
+<div id="container">
+  <table class="boxA">
     <tr>  
       <th>ベンダーコード ＊</th>
       <td><%= f.text_field :accnt_cd %></td>
     </tr>
     <tr>
       <th>ベンダー種別(1) ＊</th>
-      <td><%= f.text_field :accnt_type_1 %></td>
+      <td><%= select_tag :accnt_type_1, options_from_collection_for_select(@accnt_type_1, :code, :annotation_j)%></td>
     </tr>
     <tr>
       <th>ベンダー種別(2) ＊</th>
-      <td><%= f.text_field :accnt_type_2 %></td>
+      <td><%= select_tag :accnt_type_2, options_from_collection_for_select(@accnt_type_2, :code, :annotation_j )%></td>
     </tr>
     <tr>
       <th>ベンダー名称</th>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <th>国番号 ＊</th>
-      <td><%= f.text_field :country_cd %></td>
+      <td><%= select_tag :country_cd, options_from_collection_for_select(@country_ms, :country_cd, :country_name, "JPN" )%></td>
     </tr>
     <tr>
       <th>郵便番号</th>
@@ -31,10 +31,11 @@
     </tr>
     <tr>
       <th>都道府県 ＊</th>
-      <td><%= f.text_field :prefecture_no %></td>
+      <td><%= select_tag :prefecture_no, options_from_collection_for_select(@prefecture_ms, :prefecture_no, :prefecture_name, 13 )%></td>
     </tr>
   </table>
-  <table class="contents-top">
+  </br>
+  <table class="boxB">
     <tr>  
       <th>市町村</th>
       <td><%= f.text_field :city %></td>
@@ -68,18 +69,18 @@
       <td><%= f.text_field :fax %></td>
     </tr>
   </table>
-  <table class="contents-top">
+  <table class="boxC">
     <tr>  
       <th>メモ</th>
       <td><%= f.text_field :memo %></td>
     </tr>
   </table>
-<br>
-</div>
 
+</div>
+<br>
+<div class="boxD">
 <% @accnt_m.accnt_staff_ms.each do |accnt_staff_m| %>
   <%= f.fields_for :accnt_staff_ms, accnt_staff_m do |ff| %>
-<div class="container">
  <table class="contents-buttom" >
   <thead>
     <tr>  
@@ -108,7 +109,6 @@
     </tr>    
   </thead>
   </table>
-  <table class="contents-buttom" >
   <thead>
     <tr>  
       <th>国番号</th>
@@ -148,8 +148,9 @@
     </tr> 
   </thead>
   </table>
-  </div><br>
+  </div>
+  <br>
+    <% end %>
   <% end %>
-<% end %>
-<%= f.submit '登録' %>
+  <%= f.submit '登録' %>
 <% end %>

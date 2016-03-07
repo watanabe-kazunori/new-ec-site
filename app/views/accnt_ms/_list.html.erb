@@ -1,5 +1,48 @@
+<%= search_form_for @search do |s| %>
+  <table class="search">
+    <tr>
+        <th>ベンダーコード</th>
+        <td><%= s.text_field :accnt_cd %></td>
+    </tr>
+    <tr>
+        <th>ベンダー種別</th>
+        <td>
+           <input type="radio" value="0" name="accnt_type_1" id="1" checked="checked"><label for="0">開発元企業</label>
+            <input type="radio" value="1" name="ccnt_type_1" id="2"><label for="2">仕入代理店</label>            
+        </td>
+    </tr>
+    <tr>
+        <th>ベンダー名</th>
+        <td><%= s.text_field :accnt_name %></td>
+    </tr>
+    <tr>
+        <th>ベンダー名（英語）</th>
+        <td><%= s.text_field :accnt_name_e %></td>
+    </tr>
+    <tr>
+        <th>担当者氏名</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>担当者指名（英語）</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Eメールアドレス</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>納品名</th>
+        <td></td>
+    </tr>
+  </table>
+    <div align="center"><%= submit_tag("検索") %></div>
+<% end %>
 <div class="sub-menu"><h1>検索結果一覧</h1></div>
-<table class="list" border=1>
+
+<%= paginate(@accnt_ms) %>
+
+<table border=1>
   <thead>
     <tr>
       <th>取引先コード</th>
@@ -8,9 +51,9 @@
       <th>法人個人区分</th>
       <th>取引先名</th>
       <th>取引先名英語表記</th>
-      <th>国地域コード (FK)</th>
+      <th>国地域コード</th>
       <th>郵便番号</th>
-      <th>都道府県番号 (FK)</th>
+      <th>都道府県番号</th>
       <th>市区町村</th>
       <th>町丁目</th>
       <th>ビル名部屋番号</th>
@@ -31,32 +74,31 @@
   <tbody>
     <% @accnt_ms.each do |accnt_m| %>
       <tr>
-        <td><%= accnt_m.accnt_cd %></td>
-        <td><%= accnt_m.accnt_type_1 %></td>
-        <td><%= accnt_m.accnt_type_2 %></td>
-        <td><%= accnt_m.com_ind %></td>
-        <td><%= accnt_m.accnt_name %></td>
-        <td><%= accnt_m.accnt_name_e %></td>
-        <td><%= accnt_m.country_cd %></td>
-        <td><%= accnt_m.zip %></td>
-        <td><%= accnt_m.prefecture_no %></td>
-        <td><%= accnt_m.city %></td>
-        <td><%= accnt_m.area %></td>
-        <td><%= accnt_m.bld %></td>
-        <td><%= accnt_m.print_address %></td>
-        <td><%= accnt_m.print_address_e %></td>
-        <td><%= accnt_m.tel %></td>
-        <td><%= accnt_m.email %></td>
-        <td><%= accnt_m.fax %></td>
-        <td><%= accnt_m.memo %></td>
-        <td><%= accnt_m.created_at.strftime("%Y年 %m月 %d日  %H:%M:%S") %></td>
-        <td><%= accnt_m.rgstr_usr %></td>
-        <td><%= accnt_m.created_at.strftime("%Y年 %m月 %d日  %H:%M:%S") %></td>
-        <td><%= accnt_m.lst_upd_usr %></td>
-        <td><%= link_to '表示', accnt_m %></td>
-        <td><%= link_to '更新', edit_accnt_m_path(accnt_m) %></td>
-        <td><%= link_to '削除', accnt_m, method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        <td><% accnt_m.accnt_cd %></td>
+        <td><% accnt_m.accnt_type_1 %></td>
+        <td><% accnt_m.accnt_type_2 %></td>
+        <td><% accnt_m.com_ind %></td>
+        <td><% accnt_m.accnt_name %></td>
+        <td><% accnt_m.accnt_name_e %></td>
+        <td><% accnt_m.country_cd %></td>
+        <td><% accnt_m.zip %></td>
+        <td><% accnt_m.prefecture_no %></td>
+        <td><% accnt_m.city %></td>
+        <td><% accnt_m.area %></td>
+        <td><% accnt_m.bld %></td>
+        <td><% accnt_m.print_address %></td>
+        <td><% accnt_m.print_address_e %></td>
+        <td><% accnt_m.tel %></td>
+        <td><% accnt_m.email %></td>
+        <td><% accnt_m.fax %></td>
+        <td><% accnt_m.memo %></td>
+        <td><% accnt_m.created_at %></td>
+        <td><% accnt_m.rgstr_usr %></td>
+        <td><% accnt_m.created_at   %></td>
+        <td><% accnt_m.lst_upd_usr %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= page_entries_info(@accnt_ms) %>

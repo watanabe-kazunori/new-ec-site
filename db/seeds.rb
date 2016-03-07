@@ -40,20 +40,20 @@
 
 
 
-unless Rails.env.production?
-  connection = ActiveRecord::Base.connection
-  # - IMPORTANT: SEED DATA ONLY
-  # - DO NOT EXPORT TABLE STRUCTURES
-  # - DO NOT EXPORT DATA FROM `schema_migrations`
-  sql = File.read('db/sql/PREFECTURE.sql')
-  statements = sql.split("\r\n")
-  statements.pop  # the last empty statement
+# unless Rails.env.production?
+#   connection = ActiveRecord::Base.connection
+#   # - IMPORTANT: SEED DATA ONLY
+#   # - DO NOT EXPORT TABLE STRUCTURES
+#   # - DO NOT EXPORT DATA FROM `schema_migrations`
+#   sql = File.read('db/sql/PREFECTURE.sql')
+#   statements = sql.split("\r\n")
+#   statements.pop  # the last empty statement
  
-  ActiveRecord::Base.transaction do
-    statements.each do |statement|
-      connection.execute(statement)
-    end
-  end
+#   ActiveRecord::Base.transaction do
+#     statements.each do |statement|
+#       connection.execute(statement)
+#     end
+#   end
 
 unless Rails.env.production?
   connection = ActiveRecord::Base.connection
