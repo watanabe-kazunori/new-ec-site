@@ -11,7 +11,8 @@ class AccntMsController < ApplicationController
 
   def new
     @accnt_m = AccntM.new
-    # @accnt_staff_ms = @accnt_m.accnt_staff_ms.build
+    accnt_staff_m = AccntStaffM.new
+    @accnt_m.accnt_staff_ms << accnt_staff_m
     # @accnt_type_1 = CodeM.where("code_name = ?", "ACCNT_TYPE_1").order(:sort_order)
     # @country_ms = CountryM.all
     # @prefecture_ms = PrefectureM.all
@@ -21,8 +22,7 @@ class AccntMsController < ApplicationController
   end
 
   def create
-    @accnt_m = AccntM.new(accnt_m_params)
-
+    @accnt_m = AccntM.create(accnt_m_params)
     respond_to do |format|
       if @accnt_m.save
         format.html { redirect_to @accnt_m, notice: '新規に取引先が作成されました。' }
@@ -51,10 +51,15 @@ class AccntMsController < ApplicationController
 
   private
     def set_accnt_m
-      @accnt_m = accnt_m.find(params[:id])
+      @accnt_m = AccntM.find(params[:id])
     end
 
     def accnt_m_params
-      params.require(:accnt_m).permit(:accnt_cd, :accnt_type_1, :accnt_type_2, :com_ind, :accnt_m_name, :accnt_m_name_e, :country_cd, :zip, :prefecture_no, :city, :area, :bld, :print_address, :print_address_e, :tel, :email, :fax, :memo, :rgstr_usr, :last_upd_usr )
-    end
+      params.require(:accnt_m).permit(
+        :accnt_cd, :accnt_type_1, :accnt_type_2, :accnt_name, :accnt_name_e,
+        :country_cd, :zip, :prefecture_no, :city, :area, :bld, :print_address,
+        :print_address_e, :tel, :email, :fax, :memo,
+        accnt_staff_ms_attributes: [:staff_id, :accnt_cd, :dept_name, :staff_name, :staff_name_e, :country_cd,
+        :zip, :prefecture_no, :city, :area, :bld, :print_address, :print_address_e, :tel ])
+  end
 end

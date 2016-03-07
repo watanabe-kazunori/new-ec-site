@@ -1,6 +1,5 @@
 <%= form_for @search_form, as: 'search', url: :accnt_ms,
     html: { method: :get, class: 'search' } do |f| %>
-<div>
   <table class="search">
     <tr>
         <th>ベンダーコード</th>
@@ -37,7 +36,7 @@
         <th>納品名</th>
         <td><%= f.text_field :product_name %></td>
     </tr>
-  </table></br>
-      <div align="center"><%= submit_tag("検索") %></div>
-    </div>
+  </table>
+    <div align="center"><%= submit_tag("検索") %></div>
+
 <% end %>
