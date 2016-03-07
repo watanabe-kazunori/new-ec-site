@@ -1,2 +1,0 @@
-module AccntStaffMsHelper
-end

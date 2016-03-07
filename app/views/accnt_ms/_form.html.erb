@@ -1,13 +1,2 @@
-<%= form_for(@accnt_m) do |f| %>
-<fieldset id="accnt-m-fields">
-	<h1>ベンダー情報</h1>
-	<%= render 'accnt_m_fields' %>
-</fieldset>
-<fieldset id="accnt-staff-fields" >
-	<h1>ベンダー担当者情報</h1>
-	<%= render 'accnt_staff_fields' %>
-</fieldset>
-<div class="buttons">
-<%= f.submit '登録' %>
-</div>
-<% end %>
+<div class="sub-menu"><h1>ベンダー情報</h1></div>
+	<%= render 'accnt_m' %>
