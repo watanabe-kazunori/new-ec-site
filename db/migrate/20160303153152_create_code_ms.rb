@@ -7,7 +7,7 @@ class CreateCodeMs < ActiveRecord::Migration
       t.string :list_name_j, limit:50
       t.string :annotation, limit:100
       t.string :annotation_j, limit:100
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end

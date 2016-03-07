@@ -5,12 +5,71 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require "csv"
 
-CSV.foreach('db/country_m.csv') do |row|
-  Country.create(:country_cd => row[2], :country_name => row[0], :country_name_e => row[1])
+# unless Rails.env.production?
+#   connection = ActiveRecord::Base.connection
+#   # - IMPORTANT: SEED DATA ONLY
+#   # - DO NOT EXPORT TABLE STRUCTURES
+#   # - DO NOT EXPORT DATA FROM `schema_migrations`
+#   sql = File.read('db/sql/CODE_M.sql')
+#   statements = sql.split("\r\n")
+#   statements.pop  # the last empty statement
+ 
+#   ActiveRecord::Base.transaction do
+#     statements.each do |statement|
+#       connection.execute(statement)
+#     end
+#   end
+# end
+
+# unless Rails.env.production?
+#   connection = ActiveRecord::Base.connection
+#   # - IMPORTANT: SEED DATA ONLY
+#   # - DO NOT EXPORT TABLE STRUCTURES
+#   # - DO NOT EXPORT DATA FROM `schema_migrations`
+#   sql = File.read('db/sql/CURRENCY_M.sql')
+#   statements = sql.split("\r\n")
+#   statements.pop  # the last empty statement
+ 
+#   ActiveRecord::Base.transaction do
+#     statements.each do |statement|
+#       connection.execute(statement)
+#     end
+#   end
+# end
+
+
+
+unless Rails.env.production?
+  connection = ActiveRecord::Base.connection
+  # - IMPORTANT: SEED DATA ONLY
+  # - DO NOT EXPORT TABLE STRUCTURES
+  # - DO NOT EXPORT DATA FROM `schema_migrations`
+  sql = File.read('db/sql/PREFECTURE.sql')
+  statements = sql.split("\r\n")
+  statements.pop  # the last empty statement
+ 
+  ActiveRecord::Base.transaction do
+    statements.each do |statement|
+      connection.execute(statement)
+    end
+  end
+
+unless Rails.env.production?
+  connection = ActiveRecord::Base.connection
+  # - IMPORTANT: SEED DATA ONLY
+  # - DO NOT EXPORT TABLE STRUCTURES
+  # - DO NOT EXPORT DATA FROM `schema_migrations`
+  sql = File.read('db/sql/COUNTRY_M.sql')
+  statements = sql.split("\r\n")
+  statements.pop  # the last empty statement
+ 
+  ActiveRecord::Base.transaction do
+    statements.each do |statement|
+      connection.execute(statement)
+    end
+  end
 end
 
-CSV.foreach('db/prefecture_no.csv') do |row|
-  Prefecture.create(:prefecture_no => row[0], :prefecture_name => row[1])
+
 end

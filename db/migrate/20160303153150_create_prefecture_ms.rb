@@ -3,7 +3,7 @@ class CreatePrefectureMs < ActiveRecord::Migration
     create_table :prefecture_ms do |t|
       t.string :prefecture_no, limit: 2
       t.string :prefecture_name, limit:6
-      t.timestamps null: false
+        t.timestamps null: true
     end
   end
 end

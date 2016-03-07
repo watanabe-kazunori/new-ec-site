@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303153143) do
+ActiveRecord::Schema.define(version: 20160307043729) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20160303153143) do
     t.string   "list_name_j",  limit: 50
     t.string   "annotation",   limit: 100
     t.string   "annotation_j", limit: 100
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "country_ms", force: :cascade do |t|
@@ -81,34 +81,26 @@ ActiveRecord::Schema.define(version: 20160303153143) do
     t.string   "country_name",   limit: 50
     t.string   "country_name_e", limit: 50
     t.string   "currency_cd",    limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "cpn_ms", force: :cascade do |t|
-    t.integer  "cpn_id",          limit: 4,                                         null: false
-    t.string   "cpn_cd",          limit: 30,                                        null: false
-    t.string   "cpn_st",          limit: 1,                                         null: false
-    t.string   "cpn_title",       limit: 2000,                                      null: false
-    t.string   "cpn_cls",         limit: 1,                                         null: false
-    t.string   "cpn_discnt_type", limit: 1,                                         null: false
-    t.string   "vndr_cpn",        limit: 1,                                         null: false
-    t.integer  "use_limit",       limit: 4,                             default: 0, null: false
-    t.datetime "start_dt",                                                          null: false
-    t.datetime "expiration_dt"
-    t.decimal  "dscnt_value",                  precision: 20, scale: 2
-    t.decimal  "dscnt_rate",                   precision: 5,  scale: 2
-    t.string   "trgt_prd_cndtn",  limit: 2000
-    t.string   "excld_prd_cndtn", limit: 2000
-    t.string   "memo",            limit: 2000
-    t.integer  "cpn_m_id",        limit: 4
+  create_table "currency_ms", force: :cascade do |t|
+    t.string   "currency_cd",     limit: 4
+    t.string   "currency_sign",   limit: 2
+    t.string   "currency_name",   limit: 50
+    t.string   "currency_name_e", limit: 50
+    t.string   "currency_unit",   limit: 20
+    t.string   "currency_unit_e", limit: 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "prefecture_ms", force: :cascade do |t|
     t.string   "prefecture_no",   limit: 2
     t.string   "prefecture_name", limit: 6
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

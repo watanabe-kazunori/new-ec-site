@@ -5,7 +5,7 @@ class CreateCountryMs < ActiveRecord::Migration
       t.string :country_name, limit: 50
       t.string :country_name_e, limit: 50
       t.string :currency_cd, limit: 4
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end
