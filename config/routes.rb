@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :serial_ms
   resources :prd_ms
   resources :cpn_m_total_sales_dscnts
   resources :cpn_m_sales_cntcts

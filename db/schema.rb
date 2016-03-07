@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303153143) do
+ActiveRecord::Schema.define(version: 20160307045320) do
 
   create_table "cpn_m_sales_cntcts", force: :cascade do |t|
     t.integer  "cpn_id",               limit: 4,  null: false, unsigned: true
@@ -96,6 +96,39 @@ ActiveRecord::Schema.define(version: 20160303153143) do
     t.integer  "lst_upd_usr",                limit: 4,    default: 0, null: false, unsigned: true
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
+  end
+
+  create_table "serial_ms", force: :cascade do |t|
+    t.integer  "serial_id",                  limit: 4,    null: false, unsigned: true
+    t.string   "sku",                        limit: 30,   null: false
+    t.string   "serial_type",                limit: 1,    null: false
+    t.string   "cnsgnmnt_serial_st",         limit: 1
+    t.date     "cnsgnmnt_serial_store_date"
+    t.string   "po_no",                      limit: 30,   null: false
+    t.string   "os_type",                    limit: 1
+    t.string   "serial_no_1",                limit: 30,   null: false
+    t.string   "serial_no_2",                limit: 30
+    t.string   "serial_no_3",                limit: 30
+    t.string   "web_up_serial",              limit: 2000
+    t.string   "dl_file_name",               limit: 500
+    t.string   "dl_pass_cd",                 limit: 30
+    t.string   "nfr_f",                      limit: 1,    null: false
+    t.string   "nfr_rsn",                    limit: 2000
+    t.string   "accnt_cd_cstmr",             limit: 30,   null: false
+    t.string   "so_no",                      limit: 30
+    t.integer  "so_item_no",                 limit: 4,                 unsigned: true
+    t.string   "sku_serial_assngd",          limit: 30
+    t.string   "use_type",                   limit: 1
+    t.string   "upgrd_serial_f",             limit: 1,    null: false
+    t.integer  "upgrd_pre_prd_serial_no",    limit: 4,                 unsigned: true
+    t.string   "accnt_cd_sales_cntnt",       limit: 30,   null: false
+    t.string   "dlvry_no",                   limit: 30,   null: false
+    t.datetime "rgstr_dt"
+    t.integer  "rgstr_usr",                  limit: 4,                 unsigned: true
+    t.datetime "lst_upd_dt"
+    t.integer  "lst_upd_usr",                limit: 4,                 unsigned: true
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
 end

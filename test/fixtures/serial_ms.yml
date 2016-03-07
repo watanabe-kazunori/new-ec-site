@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_id: 1
+  sku: MyString
+  serial_type: MyString
+  cnsgnmnt_serial_st: MyString
+  cnsgnmnt_serial_store_date: 2016-03-07
+  po_no: MyString
+  os_type: MyString
+  serial_no_1: MyString
+  serial_no_2: MyString
+  serial_no_3: MyString
+  web_up_serial: MyString
+  dl_file_name: MyString
+  dl_pass_cd: MyString
+  nfr_f: MyString
+  nfr_rsn: MyString
+  accnt_cd_cstmr: MyString
+  so_no: MyString
+  so_item_no: 1
+  sku_serial_assngd: MyString
+  use_type: MyString
+  upgrd_serial_f: MyString
+  upgrd_pre_prd_serial_no: 1
+  accnt_cd_sales_cntnt: MyString
+  dlvry_no: MyString
+  rgstr_dt: 2016-03-07 13:53:21
+  rgstr_usr: 1
+  lst_upd_dt: 2016-03-07 13:53:21
+  lst_upd_usr: MyString
+
+two:
+  serial_id: 1
+  sku: MyString
+  serial_type: MyString
+  cnsgnmnt_serial_st: MyString
+  cnsgnmnt_serial_store_date: 2016-03-07
+  po_no: MyString
+  os_type: MyString
+  serial_no_1: MyString
+  serial_no_2: MyString
+  serial_no_3: MyString
+  web_up_serial: MyString
+  dl_file_name: MyString
+  dl_pass_cd: MyString
+  nfr_f: MyString
+  nfr_rsn: MyString
+  accnt_cd_cstmr: MyString
+  so_no: MyString
+  so_item_no: 1
+  sku_serial_assngd: MyString
+  use_type: MyString
+  upgrd_serial_f: MyString
+  upgrd_pre_prd_serial_no: 1
+  accnt_cd_sales_cntnt: MyString
+  dlvry_no: MyString
+  rgstr_dt: 2016-03-07 13:53:21
+  rgstr_usr: 1
+  lst_upd_dt: 2016-03-07 13:53:21
+  lst_upd_usr: MyString

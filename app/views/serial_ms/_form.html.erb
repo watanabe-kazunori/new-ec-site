@@ -1,0 +1,144 @@
+<%= form_for(@serial_m) do |f| %>
+  <% if @serial_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@serial_m.errors.count, "error") %> prohibited this serial_m from being saved:</h2>
+
+      <ul>
+      <% @serial_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div　class="prd-area">
+  <table class="button-center">
+    <tr>
+      <td class="button"><%= submit_tag("登録") %></td>
+      <td class="button"><%= submit_tag("変更") %></td>
+    </tr>
+  </table>
+  <div class="border"></div>
+
+    <table>
+      <tr>
+        <th><%= f.label :シリアル種別 %></th>
+          <td><input type="radio" name ="serial_type" id="0" value="0" checked><label for="0">委託シリアル</label>
+        <input type="radio" name ="serial_type" id="1"  value="1"><label for="1">受発注シリアル </label>
+        <input type="radio" name ="serial_type" id="2"  value="2"><label for="1">無償アップグレードシリアル </label></td>
+      </tr>
+      <tr>
+          <th><%= f.label :ベンダーID %></th>
+          <td><%= f.text_field :sku %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :ベンダー名 %></th>
+          <td><%= f.text_field :sku %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :委託日 %></th>
+          <td><%= f.datetime_select :lst_upd_dt %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :販売日 %></th>
+          <td><%= f.datetime_select :lst_upd_dt %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :納品日 %></th>
+          <td><%= f.datetime_select :lst_upd_dt %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :'製品番号（SKU)' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'製品名(販売名)' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'製品名(通常名)' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'OS' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'発注(P.O)番号' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :注文番号 %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :用途 %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'シリアル #1' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'シリアル #2' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'アクティベーション/レジルトレーションキー' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'WebUpシリアル' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :顧客ID %></th>
+          <td><select name = "example"><option value =""></option></select></td>
+      </tr> 
+      <tr>
+          <th><%= f.label :ベンダー別顧客ID_1 %></th>
+          <td><select name = "example"><option value =""></option></select></td>
+      </tr>
+      <tr>
+        <th><%= f.label :ベンダー別顧客ID_2 %></th>
+          <td><select name = "example"><option value =""></option></select></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'委託/買取' %></th>
+          <td><input type="radio" name ="SET_PRD_TYPE" id="0" value="0" checked><label for="0">委託</label>
+        <input type="radio" name ="SET_PRD_TYPE" id="1"  value="1"><label for="1">買取 </label></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'ダウンロードファイル名' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'ダウンロードファイルURL' %></th>
+          <td><%= f.text_field :sku,size:50 %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'マニュアルパスワード' %></th>
+          <td><%= f.text_field :sku %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :シリアル発行状態 %></th>
+          <td><select name = "example"><option value =""></option></select></td>
+      </tr>                                
+    </table>
+
+  <div class="border"></div>
+
+
+  <table class="button-center">
+    <tr>
+      <td class="button"><%= submit_tag("登録") %></td>
+      <td class="button"><%= submit_tag("変更") %></td>
+    </tr>
+  </table>
+    
+</div>  
+
+  
+
+<% end %>

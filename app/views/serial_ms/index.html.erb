@@ -1,0 +1,144 @@
+<p id="notice"><%= notice %></p>
+<!--
+<div>
+<%= render 'layouts/header' %>
+</div><br>
+-->
+
+<div class ="main-area">
+  <div class="c-area">
+    <%= render 'menu' %>
+  </div>
+  <div class="c-area">
+
+     <h1>シリアル検索</h1>
+    </br>
+      <div class="prd-area">
+        <table class="center">
+          <tr>
+              <th>シリアル種別</th>
+              <td><%= check_box 'sirial_m','SKU' %>委託シリアル
+                <%= check_box 'serial_m','SKU' %>受発注シリアル
+                <%= check_box 'serial_m','SKU' %>無償アップグレードシリアル</td>
+          </tr>
+
+          <tr>
+              <th>ベンダー名</th>
+              <td>        
+                <select name = "example">
+                  <option value =""></option> 
+                </select></td>
+          </tr>
+          
+          <tr>
+              <th>製品名</th>
+              <td><%= text_field 'serial_m','SKU' %></td>
+          </tr>
+
+          <tr>
+              <th>製品番号(SKU)</th>
+              <td>          
+                <select name = "example">
+                  <option value =""></option>
+                </select>
+              </td>
+          </tr>
+
+          <tr>
+              <th>シリアル</th>
+              <td><%= text_field 'serial_m','SKU' %></td>   
+          </tr>
+
+          <tr>
+              <th>販売日</th>
+              <td><%= datetime_select 'serial_m','SKU' %></td>
+          </tr>
+
+          <tr>
+              <th>委託日</th>
+              <td><%= datetime_select 'serial_m','SKU' %></td>
+          </tr>
+
+              <tr>
+              <th>注文番号</th>
+              <td><%= text_field 'serial_m','SKU' %></td>
+          </tr>
+
+              <tr>
+              <th>顧客名</th>
+              <td><%= text_field 'serial_m','SKU' %></td>
+          </tr>
+        </table>
+      <table class="button-center">
+        <tr>
+            <td class="button"><%= submit_tag("検索") %></td>    
+        </tr>
+
+      </table>
+        <div class="border"></div>
+
+        <h1>シリアル検索　結果一覧</h1>
+
+        <table class="result-center" frame="border">
+          <tr>
+            <th style="text-align: left">検索該当件数</th>
+            <td align="right"><%= label 'prd_m','123456789' %>件</td>
+          </tr>  
+        </table>
+        <table class="button-center">
+          <tr>
+            <td class="button"　><%= submit_tag("前へ") %></td>
+            <td class="button"><%= submit_tag("次へ") %></td>
+          </tr>
+        </table>
+      <table class="result-table" border=1>
+        <thead>
+          <tr>  
+            <th><%= check_box 'prd_m','chkflg' %></th>
+            <th style="width: 20px">　　　　</th>
+            <th>シリアル種別</th>
+            <th>ベンダー名</th>
+            <th>製品番号(SKU)</th>
+            <th>製品名</th>
+            <th>シリアル1</th>
+            <th>シリアル2</th>
+            <th>販売日</th>
+            <th>委託日</th>
+            <th>注文番号</th>
+            <th>顧客名</th>
+            <th>シリアル状態<br>(発行済/未発行/引当)</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @serial_ms.each do |serial_m| %>          
+          <tr>
+            <td><%= check_box 'prd_m','chkflg' %></td>
+            <td><%= link_to '詳細', serial_m %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td> 
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= serial_m.sku %></td>
+            <td><%= link_to '編集', edit_serial_m_path(serial_m) %></td>
+            <td><%= link_to '削除', serial_m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+          </tr>
+      <% end %>
+      </tbody>
+    </table>   
+        <table class="button-center">
+          <tr>
+             <td class="button"><%= submit_tag("前へ") %></td>
+            <td class="button"><%= submit_tag("次へ") %></td>      
+          </tr>
+        </table>
+    </div>
+</div>
+</div>

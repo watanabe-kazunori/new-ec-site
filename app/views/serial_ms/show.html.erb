@@ -1,0 +1,138 @@
+<%= form_for(@serial_m) do |f| %>
+  <% if @serial_m.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@serial_m.errors.count, "error") %> prohibited this serial_m from being saved:</h2>
+
+      <ul>
+      <% @prd_m.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="prd-area">
+
+<!--
+<div>
+<%= render 'layouts/header' %>
+</div><br>
+-->
+
+<div class ="main-area">
+  <div class="c-area">
+    <%= render 'menu' %><br>
+     <%= link_to 'シリアル　編集', edit_serial_m_path(@serial_m) %> <br><br>
+  </div>
+  <div class="c-area">
+
+  <h1>シリアル　詳細</h1>
+ <table>
+      <tr>
+        <th><%= f.label :シリアル種別 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :ベンダーID %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :ベンダー名 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :委託日 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :販売日 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :納品日 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :'製品番号（SKU)' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'製品名(販売名)'  %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'製品名(通常名)' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'OS' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'発注(P.O)番号' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :注文番号 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :用途 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'シリアル #1' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'シリアル #2' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'アクティベーション/レジルトレーションキー' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'WebUpシリアル' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :顧客ID %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr> 
+      <tr>
+          <th><%= f.label :ベンダー別顧客ID_1 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :ベンダー別顧客ID_2 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'委託/買取' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'ダウンロードファイル名' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'ダウンロードファイルURL' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :'マニュアルパスワード' %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>
+      <tr>
+          <th><%= f.label :シリアル発行状態 %></th>
+          <td><%= f.label :仮データ %></td>
+      </tr>                                
+    </table><% end %>
+
+
+</div>
+</div>

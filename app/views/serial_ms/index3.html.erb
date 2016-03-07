@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+<%= render 'layouts/header' %>
+</div><br>
+
+<div class ="main-area">
+  <div class="c-area">
+    <%= render 'menu' %>
+  </div>
+  <div class="c-area">
+ <h1>シリアル登録（自動）</h1>
+</br>
+  <div class="prd-area">
+    <table class="center">
+      <tr>
+          <th>ベンダー名</th>
+          <td>        
+            <select name = "example">
+              <option value =""></option> 
+            </select></td>
+      </tr>
+
+          <tr>
+          <th>シリアルデータファイル</th>
+          <td><%= text_field 'serial_m','SKU' %><%= submit_tag("ファイル選択") %></td>
+      </tr>
+    </table>
+  <table class="button-center">
+    <tr>
+        <td class="button"><%= submit_tag("登録") %></td>    
+    </tr>
+
+  </table>
+
+
+
+</div>
+</div>
