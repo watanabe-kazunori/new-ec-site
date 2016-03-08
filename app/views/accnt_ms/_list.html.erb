@@ -2,38 +2,34 @@
   <table class="search">
     <tr>
         <th>ベンダーコード</th>
-        <td><%= s.text_field :accnt_cd %></td>
+        <td><%= s.search_field :accnt_cd_cont %></td>
     </tr>
     <tr>
         <th>ベンダー種別</th>
         <td>
            <input type="radio" value="0" name="accnt_type_1" id="1" checked="checked"><label for="0">開発元企業</label>
-            <input type="radio" value="1" name="ccnt_type_1" id="2"><label for="2">仕入代理店</label>            
+            <input type="radio" value="1" name="accnt_type_1" id="2"><label for="2">仕入代理店</label>            
         </td>
     </tr>
     <tr>
         <th>ベンダー名</th>
-        <td><%= s.text_field :accnt_name %></td>
+        <td><%= s.search_field :accnt_name_cont %></td>
     </tr>
     <tr>
         <th>ベンダー名（英語）</th>
-        <td><%= s.text_field :accnt_name_e %></td>
+        <td><%= s.search_field :accnt_name_e_cont %></td>
     </tr>
     <tr>
         <th>担当者氏名</th>
-        <td></td>
+        <td><%= s.search_field :accnt_staff_ms_staff_name_cont %></td>
     </tr>
     <tr>
         <th>担当者指名（英語）</th>
-        <td></td>
+        <td><%= s.search_field :accnt_staff_ms_staff_name_e_cont %></td>
     </tr>
     <tr>
         <th>Eメールアドレス</th>
-        <td></td>
-    </tr>
-    <tr>
-        <th>納品名</th>
-        <td></td>
+        <td><%= s.search_field :email_or_accnt_staff_ms_email_cont %></td>
     </tr>
   </table>
     <div align="center"><%= s.submit %></div>
@@ -41,6 +37,7 @@
 <div class="sub-menu"><h1>検索結果一覧</h1></div>
 
 <%= paginate(@accnt_ms) %>
+
 <table border=1>
   <thead>
     <tr>
@@ -71,30 +68,30 @@
   </thead>
 
   <tbody>
-    <% @accnt_ms.each do |accnt_m| %>
+    <% @accnt_ms.each do |f| %>
       <tr>
-        <td><%= accnt_m.accnt_cd %></td>
-        <td><%= accnt_m.accnt_type_1 %></td>
-        <td><%= accnt_m.accnt_type_2 %></td>
-        <td><%= accnt_m.com_ind %></td>
-        <td><%= accnt_m.accnt_name %></td>
-        <td><%= accnt_m.accnt_name_e %></td>
-        <td><%= accnt_m.country_cd %></td>
-        <td><%= accnt_m.zip %></td>
-        <td><%= accnt_m.prefecture_no %></td>
-        <td><%= accnt_m.city %></td>
-        <td><%= accnt_m.area %></td>
-        <td><%= accnt_m.bld %></td>
-        <td><%= accnt_m.print_address %></td>
-        <td><%= accnt_m.print_address_e %></td>
-        <td><%= accnt_m.tel %></td>
-        <td><%= accnt_m.email %></td>
-        <td><%= accnt_m.fax %></td>
-        <td><%= accnt_m.memo %></td>
-        <td><%= accnt_m.created_at %></td>
-        <td><%= accnt_m.rgstr_usr %></td>
-        <td><%= accnt_m.created_at   %></td>
-        <td><%= accnt_m.lst_upd_usr %></td>
+        <td><%= f.accnt_cd %></td>
+        <td><%= f.accnt_type_1 %></td>
+        <td><%= f.accnt_type_2 %></td>
+        <td><%= f.com_ind %></td>
+        <td><%= f.accnt_name %></td>
+        <td><%= f.accnt_name_e %></td>
+        <td><%= f.country_cd %></td>
+        <td><%= f.zip %></td>
+        <td><%= f.prefecture_no %></td>
+        <td><%= f.city %></td>
+        <td><%= f.area %></td>
+        <td><%= f.bld %></td>
+        <td><%= f.print_address %></td>
+        <td><%= f.print_address_e %></td>
+        <td><%= f.tel %></td>
+        <td><%= f.email %></td>
+        <td><%= f.fax %></td>
+        <td><%= f.memo %></td>
+        <td><%= f.created_at %></td>
+        <td><%= f.rgstr_usr %></td>
+        <td><%= f.created_at   %></td>
+        <td><%= f.lst_upd_usr %></td>
       </tr>
     <% end %>
   </tbody>

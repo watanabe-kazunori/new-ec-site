@@ -3,8 +3,7 @@ class AccntMsController < ApplicationController
   
   def index
     @search = AccntM.search(params[:q])
-    @accnt_ms = @search.result
-    @accnt_ms = AccntM.page(params[:page]).per(10).order(:accnt_cd)
+    @accnt_ms = @search.result.page(params[:page]).per(10).order(:accnt_cd)
   end
 
   def show
@@ -15,7 +14,6 @@ class AccntMsController < ApplicationController
   end
 
   def new
-
     @accnt_m = AccntM.new
     accnt_staff_m = AccntStaffM.new
     @accnt_m.accnt_staff_ms << accnt_staff_m
@@ -62,7 +60,7 @@ class AccntMsController < ApplicationController
 
   private
     def set_accnt_m
-      @accnt_m = AccntM.find(params[:id])
+      @accnt_m = AccntM.find(params[:accnt_cd])
     end
 
     def accnt_m_params
