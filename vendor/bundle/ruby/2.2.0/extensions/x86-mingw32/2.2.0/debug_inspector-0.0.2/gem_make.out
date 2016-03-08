@@ -1,0 +1,16 @@
+current directory: c:/temp/new-ec-site/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+C:/RailsInstaller/Ruby2.2.0/bin/ruby.exe -r ./siteconf20160308-69388-19zzkcj.rb extconf.rb
+creating Makefile
+
+current directory: c:/temp/new-ec-site/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: c:/temp/new-ec-site/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+generating debug_inspector-i386-mingw32.def
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: c:/temp/new-ec-site/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20160308-69388-127bjjd

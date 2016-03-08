@@ -98,62 +98,41 @@ li{
 -->
 <h1>クーポン　検索</h1>
 <table class="table1"  border=1 align=center>
-  <div class="field">
-  <tr>
-  <th><strong>クーポン種別</th>
-    <td>
-    <select name="cpn_m[cpn_discnt_type]" id="cpn_discnt_type" >
-      <option value =""></option>
-      <option value="1">割引額 </option>
-      <option value="2">割引率</option>
-    </select>
-    </td>
+<%= search_form_for @q do |f| %>
+<tr><th><%= f.label :cpn_discnt_type_cont, "クーポン種別" %></th>
+  <td><%= f.search_field :cpn_discnt_type_cont %></td>
   </tr>
-  </div>
-  
-    <div class="filed">
-  <tr>
-    <th><strong>有効・無効フラグ</strong></th>
-    <td>
-    <select name="cpn_m[cpn_st]" id="cpn_st">
-      <option value =""></option>
-      <option value="1">有効</option>
-      <option value="0">無効</option>
-    </select>    
-    </td>
-  </tr>
-  </div>
-    <td></td>
-  </tr>
-  </div>
+  <br />
 
-    <div class="field">
-  <tr>
-	<th><strong>クーポンコード</th>
-    <td><%= text_field 'cpn_m','cpn_cd' %></td>
-  </tr>
-  </div>
+<tr><th><%= f.label :cpn_st_cont, "有効・無効フラグ" %></th>
+  <td><%= f.search_field :cpn_st_cont %></td>
+</tr>
+  <br />
 
-    <div class="field">
-  <tr>
-	<th><strong>クーポンタイトル</th>
-     <td><%= text_field 'cpn_m','cpn_title' %></td>
-  </tr>
-  </div>    <div class="field">
-  <tr>
-	<th><strong>クーポン対象製品SKU条件</th>
-      <td><%= text_field 'cpn_m','trgt_prd_cndtn' %></td>
-  </tr>
-  </div>
+<tr><th><%= f.label :cpn_cd_cont, "クーポンコード" %></th>
+  <td><%= f.search_field :cpn_cd_cont %></td>
+</tr>
+  <br />
 
+<tr><th><%= f.label :cpn_title_cont, "クーポンタイトル" %></th>
+  <td><%= f.search_field :cpn_title_cont %></td>
+</tr>
+  <br />
+
+<tr><th><%= f.label :trgt_prd_cndtn_cont, "クーポン対象製品SKU条件" %></th>
+  <td><%= f.search_field :trgt_prd_cndtn_cont %></td>
+</tr>
+  <br />
 </table>
+
 <table class="table1" border=1>
-
-
 <h2 align=center>
-<INPUT type="Button" value="検索" name="searchbtn" style="WIDTH: 100px; HEIGHT: 20px">
-</h2>
+  <%# 検索ボタン %>
+  <%= f.submit ("検索") %>
 </table>
+
+<% end %>
+</h2>
 
 <h1>クーポン　結果一覧</h1>
 <table class="table1" border=1>
