@@ -15,6 +15,7 @@ class AccntMsController < ApplicationController
   end
 
   def new
+
     @accnt_m = AccntM.new
     accnt_staff_m = AccntStaffM.new
     @accnt_m.accnt_staff_ms << accnt_staff_m

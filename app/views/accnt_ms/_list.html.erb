@@ -36,12 +36,11 @@
         <td></td>
     </tr>
   </table>
-    <div align="center"><%= submit_tag("検索") %></div>
+    <div align="center"><%= s.submit %></div>
 <% end %>
 <div class="sub-menu"><h1>検索結果一覧</h1></div>
 
 <%= paginate(@accnt_ms) %>
-
 <table border=1>
   <thead>
     <tr>
@@ -74,28 +73,28 @@
   <tbody>
     <% @accnt_ms.each do |accnt_m| %>
       <tr>
-        <td><% accnt_m.accnt_cd %></td>
-        <td><% accnt_m.accnt_type_1 %></td>
-        <td><% accnt_m.accnt_type_2 %></td>
-        <td><% accnt_m.com_ind %></td>
-        <td><% accnt_m.accnt_name %></td>
-        <td><% accnt_m.accnt_name_e %></td>
-        <td><% accnt_m.country_cd %></td>
-        <td><% accnt_m.zip %></td>
-        <td><% accnt_m.prefecture_no %></td>
-        <td><% accnt_m.city %></td>
-        <td><% accnt_m.area %></td>
-        <td><% accnt_m.bld %></td>
-        <td><% accnt_m.print_address %></td>
-        <td><% accnt_m.print_address_e %></td>
-        <td><% accnt_m.tel %></td>
-        <td><% accnt_m.email %></td>
-        <td><% accnt_m.fax %></td>
-        <td><% accnt_m.memo %></td>
-        <td><% accnt_m.created_at %></td>
-        <td><% accnt_m.rgstr_usr %></td>
-        <td><% accnt_m.created_at   %></td>
-        <td><% accnt_m.lst_upd_usr %></td>
+        <td><%= accnt_m.accnt_cd %></td>
+        <td><%= accnt_m.accnt_type_1 %></td>
+        <td><%= accnt_m.accnt_type_2 %></td>
+        <td><%= accnt_m.com_ind %></td>
+        <td><%= accnt_m.accnt_name %></td>
+        <td><%= accnt_m.accnt_name_e %></td>
+        <td><%= accnt_m.country_cd %></td>
+        <td><%= accnt_m.zip %></td>
+        <td><%= accnt_m.prefecture_no %></td>
+        <td><%= accnt_m.city %></td>
+        <td><%= accnt_m.area %></td>
+        <td><%= accnt_m.bld %></td>
+        <td><%= accnt_m.print_address %></td>
+        <td><%= accnt_m.print_address_e %></td>
+        <td><%= accnt_m.tel %></td>
+        <td><%= accnt_m.email %></td>
+        <td><%= accnt_m.fax %></td>
+        <td><%= accnt_m.memo %></td>
+        <td><%= accnt_m.created_at %></td>
+        <td><%= accnt_m.rgstr_usr %></td>
+        <td><%= accnt_m.created_at   %></td>
+        <td><%= accnt_m.lst_upd_usr %></td>
       </tr>
     <% end %>
   </tbody>

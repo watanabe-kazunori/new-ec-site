@@ -1,4 +1,3 @@
-<script type="text/javascript">
 function isRegNum(obj){
 	alert(obj.value);
     /* 入力値 */
@@ -12,7 +11,3 @@ function isRegNum(obj){
         return false;
     }
 }
-</script>
-<div class='content-top'><h1>ベンダー情報（登録）</h1>
-<%= render 'form' %>
-<%= link_to '戻る', accnt_ms_path %>
