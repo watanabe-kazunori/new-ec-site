@@ -60,7 +60,6 @@ gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'date_validator', '~> 0.7.0'
 gem "select2-rails"
-gem 'devise', '3.0.0.rc' 
 gem 'protected_attributes'
 gem 'ransack'
 
