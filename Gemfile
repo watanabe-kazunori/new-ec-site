@@ -45,6 +45,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
 #gem 'therubyracer', platforms: :ruby
 #gem 'bcrypt-ruby', '~> 3.1.0', require: 'bcrypt'
 gem 'nokogiri', '~> 1.6.1'
