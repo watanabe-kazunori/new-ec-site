@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160307045329) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
-    t.string   "accnt_type_1",    limit: 1,    null: false
+    t.string   "accnt_type_1",    limit: 1
     t.string   "accnt_type_2",    limit: 1
     t.string   "com_ind",         limit: 1
     t.string   "accnt_name",      limit: 50

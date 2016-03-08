@@ -47,8 +47,6 @@ end
 
 gem 'rails_12factor', group: :production
 
-#gem 'therubyracer', platforms: :ruby
-#gem 'bcrypt-ruby', '~> 3.1.0', require: 'bcrypt'
 gem 'nokogiri', '~> 1.6.1'
 gem 'rails-i18n', '~> 4.0.1'
 gem 'foreigner', '~> 1.6.1'
@@ -67,4 +65,5 @@ gem 'ransack'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'composite_primary_keys'
 gem 'kaminari'
-
+gem 'activeadmin', '~> 1.0.0.pre1'
+gem 'activeadmin-translate'
