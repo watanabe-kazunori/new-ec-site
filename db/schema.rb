@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307045320) do
+ActiveRecord::Schema.define(version: 20160310083902) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
@@ -181,6 +181,10 @@ ActiveRecord::Schema.define(version: 20160307045320) do
     t.integer  "lst_upd_usr",                limit: 4,                 unsigned: true
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+  end
+
+  create_table "sys_settings", primary_key: "company_name", force: :cascade do |t|
+    t.string "company_name_e", limit: 50
   end
 
 end

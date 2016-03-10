@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sys Settings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Company name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sys_settings.each do |sys_setting| %>
+      <tr>
+        <td><%= sys_setting.company_name %></td>
+        <td><%= sys_setting.company_name_e %></td>
+        <td><%= link_to 'Show', sys_setting %></td>
+        <td><%= link_to 'Edit', edit_sys_setting_path(sys_setting) %></td>
+        <td><%= link_to 'Destroy', sys_setting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sys setting', new_sys_setting_path %>

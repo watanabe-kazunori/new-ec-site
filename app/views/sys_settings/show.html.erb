@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @sys_setting.company_name %>
+</p>
+
+<p>
+  <strong>Company name e:</strong>
+  <%= @sys_setting.company_name_e %>
+</p>
+
+<%= link_to 'Edit', edit_sys_setting_path(@sys_setting) %> |
+<%= link_to 'Back', sys_settings_path %>

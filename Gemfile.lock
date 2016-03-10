@@ -41,9 +41,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    bcrypt (3.1.11-x86-mingw32)
-    bcrypt-ruby (3.1.5-x86-mingw32)
-      bcrypt (>= 3.1.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap3-datetimepicker-rails (4.17.37)
@@ -64,11 +61,6 @@ GEM
     date_validator (0.7.1)
       activemodel
     debug_inspector (0.0.2)
-    devise (3.0.0.rc)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.1)
     erubis (2.7.0)
     execjs (2.6.0)
     foreigner (1.6.1)
@@ -86,8 +78,6 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    jquery-ui-rails (5.0.5)
-      railties (>= 3.2.16)
     json (1.8.3)
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
@@ -112,7 +102,6 @@ GEM
     mysql2 (0.4.3-x86-mingw32)
     nokogiri (1.6.7.2-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
-    orm_adapter (0.5.0)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
     protected_attributes (1.1.3)
@@ -193,8 +182,6 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    warden (1.2.6)
-      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -211,12 +198,10 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   composite_primary_keys
   date_validator (~> 0.7.0)
-  devise (= 3.0.0.rc)
   foreigner (~> 1.6.1)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
-  jquery-ui-rails
   kaminari (~> 0.15.1)
   momentjs-rails (>= 2.9.0)
   mysql2 (>= 0.3.13, < 0.5)
