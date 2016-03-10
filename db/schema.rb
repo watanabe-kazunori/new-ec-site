@@ -12,10 +12,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160310083902) do
+#ActiveRecord::Schema.define(version: 20160307045329) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
-    t.string   "accnt_type_1",    limit: 1,    null: false
+    t.string   "accnt_type_1",    limit: 1
     t.string   "accnt_type_2",    limit: 1
     t.string   "com_ind",         limit: 1
     t.string   "accnt_name",      limit: 50
@@ -39,13 +40,13 @@ ActiveRecord::Schema.define(version: 20160310083902) do
   end
 
   create_table "accnt_staff_ms", force: :cascade do |t|
+    t.string   "staff_id",         limit: 40
     t.string   "accnt_cd",         limit: 50
     t.string   "dept_name",        limit: 50
     t.string   "dept_name_e",      limit: 50
-    t.string   "emp_name",         limit: 50
-    t.string   "emp_name_e",       limit: 50
+    t.string   "staff_name",       limit: 50
+    t.string   "staff_name_e",     limit: 50
     t.string   "country_cd",       limit: 4
-    t.string   "staff_id",         limit: 255
     t.string   "zip",              limit: 10
     t.string   "prefecture_no",    limit: 2
     t.string   "city",             limit: 20
@@ -63,6 +64,26 @@ ActiveRecord::Schema.define(version: 20160310083902) do
     t.integer  "lst_upd_usr",      limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "code_ms", force: :cascade do |t|
+    t.string   "list_name",    limit: 50
+    t.string   "code",         limit: 3
+    t.string   "sort_order",   limit: 3
+    t.string   "list_name_j",  limit: 50
+    t.string   "annotation",   limit: 100
+    t.string   "annotation_j", limit: 100
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "country_ms", force: :cascade do |t|
+    t.string   "country_cd",     limit: 4
+    t.string   "country_name",   limit: 50
+    t.string   "country_name_e", limit: 50
+    t.string   "currency_cd",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "cpn_m_sales_cntcts", force: :cascade do |t|
@@ -85,14 +106,14 @@ ActiveRecord::Schema.define(version: 20160310083902) do
   end
 
   create_table "cpn_ms", force: :cascade do |t|
-    t.integer  "cpn_id",          limit: 4,                                         null: false
+    t.integer  "cpn_id",          limit: 4,                                         null: false, unsigned: true
     t.string   "cpn_cd",          limit: 30,                                        null: false
     t.string   "cpn_st",          limit: 1,                                         null: false
     t.string   "cpn_title",       limit: 2000,                                      null: false
     t.string   "cpn_cls",         limit: 1,                                         null: false
     t.string   "cpn_discnt_type", limit: 1,                                         null: false
     t.string   "vndr_cpn",        limit: 1,                                         null: false
-    t.integer  "use_limit",       limit: 4,                             default: 0, null: false
+    t.integer  "use_limit",       limit: 4,                             default: 0, null: false, unsigned: true
     t.datetime "start_dt",                                                          null: false
     t.datetime "expiration_dt"
     t.decimal  "dscnt_value",                  precision: 20, scale: 2
@@ -103,51 +124,22 @@ ActiveRecord::Schema.define(version: 20160310083902) do
     t.integer  "cpn_m_id",        limit: 4
   end
 
-  create_table "prd_ms", primary_key: "sku", force: :cascade do |t|
-    t.string   "sku_dvlpr",                  limit: 30
-    t.string   "sku_source_prd",             limit: 30
-    t.string   "prd_name",                   limit: 50
-    t.string   "prd_name_subtitle",          limit: 50
-    t.string   "prd_dvlpr_org_name",         limit: 50
-    t.string   "prd_ctgry_cd",               limit: 30,               null: false
-    t.string   "prd_type",                   limit: 1
-    t.string   "sp_prd_type",                limit: 1
-    t.string   "set_prd_f",                  limit: 1
-    t.string   "set_prd_type",               limit: 1
-    t.string   "sale_f",                     limit: 1
-    t.string   "rcvng_plcnt_prd_f",          limit: 1
-    t.string   "dlvry_ld_time",              limit: 100
-    t.string   "db_prd_dlvry_mthd",          limit: 2000
-    t.string   "lic_type",                   limit: 1
-    t.integer  "lic_from",                   limit: 4,    default: 0, null: false, unsigned: true
-    t.integer  "lic_to",                     limit: 4,    default: 0, null: false, unsigned: true
-    t.string   "dstrbtr_disp_f",             limit: 1
-    t.string   "prd_st",                     limit: 1
-    t.string   "acdmc_lic_f",                limit: 1
-    t.string   "prd_dlvry_mthd",             limit: 2000
-    t.string   "prd_desc",                   limit: 2000
-    t.string   "prd_note",                   limit: 2000
-    t.string   "prd_notice",                 limit: 2000
-    t.string   "prd_other_info",             limit: 2000
-    t.string   "url_prd",                    limit: 500
-    t.string   "url_install_guid",           limit: 500
-    t.string   "url_lic_auth_guid",          limit: 500
-    t.string   "url_installer",              limit: 500
-    t.string   "url_prd_image",              limit: 500
-    t.string   "url_dl",                     limit: 500
-    t.string   "memo",                       limit: 2000
-    t.integer  "subscription_lic_term",      limit: 4,    default: 0, null: false, unsigned: true
-    t.string   "subscription_lic_term_unit", limit: 1
-    t.integer  "mnt_lic_term",               limit: 4,    default: 0, null: false, unsigned: true
-    t.string   "mnt_lic_term_unit",          limit: 1
-    t.string   "accnt_cd_dvlpr",             limit: 30,               null: false
-    t.string   "accnt_cd_vndr",              limit: 30,               null: false
-    t.datetime "rgstr_dt"
-    t.integer  "rgstr_usr",                  limit: 4,    default: 0, null: false, unsigned: true
-    t.datetime "lst_upd_dt"
-    t.integer  "lst_upd_usr",                limit: 4,    default: 0, null: false, unsigned: true
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+  create_table "currency_ms", force: :cascade do |t|
+    t.string   "currency_cd",     limit: 4
+    t.string   "currency_sign",   limit: 2
+    t.string   "currency_name",   limit: 50
+    t.string   "currency_name_e", limit: 50
+    t.string   "currency_unit",   limit: 20
+    t.string   "currency_unit_e", limit: 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prefecture_ms", force: :cascade do |t|
+    t.string   "prefecture_no",   limit: 2
+    t.string   "prefecture_name", limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "serial_ms", force: :cascade do |t|

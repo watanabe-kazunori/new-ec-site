@@ -1,0 +1,154 @@
+<%= form_for(@accnt_m) do |f| %>
+<div id="container">
+  <table>
+    <tr>  
+      <th>ベンダーコード ＊</th>
+      <td><%= f.text_field :accnt_cd %></td>
+    </tr>
+    <tr>
+      <th>ベンダー種別(1) ＊</th>
+      <td><%= f.collection_select :accnt_type_1, @accnt_type_1, :code, :annotation_j %></td>
+    </tr>
+    <tr>
+      <th>ベンダー種別(2) ＊</th>
+      <td><%= f.collection_select :accnt_type_2, @accnt_type_2, :code, :annotation_j %></td>
+    </tr>
+    <tr>
+      <th>ベンダー名称</th>
+      <td id='test'><%= f.text_field :accnt_name %></td>
+    </tr>
+    <tr>  
+      <th>ベンダー名称(英語)</th>
+      <td><%= f.text_field :accnt_name_e %></td>
+    </tr>
+    <tr>
+      <th>国番号 ＊</th>
+      <td><%= f.collection_select :country_cd, @country_ms, :country_cd, :country_name, :selected => "JPN" %></td>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <td><%= f.text_field :zip %></td>
+    </tr>
+    <tr>
+      <th>都道府県 ＊</th>
+      <td><%= f.collection_select :prefecture_no, @prefecture_ms, :prefecture_no, :prefecture_name, :selected => 13 %></td>
+    </tr>
+  </table>
+  </br>
+  <table>
+    <tr>  
+      <th>市町村</th>
+      <td><%= f.text_field :city %></td>
+    </tr>
+    <tr>
+      <th>丁目</th>
+      <td><%= f.text_field :area %></td>
+    </tr>
+    <tr>
+      <th>ビル名</th>
+      <td><%= f.text_field :bld %></td>
+    </tr>
+    <tr>
+      <th>印字住所</th>
+      <td><%= f.text_field :print_address %></td>
+    </tr>
+    <tr>  
+      <th>印字住所（英語）</th>
+      <td><%= f.text_field :print_address_e %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td onchange="isRegNum(this)"><%= f.text_field :tel %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <th>FAX</th>
+      <td><%= f.text_field :fax %></td>
+    </tr>
+  </table>
+  <table>
+    <tr>  
+      <th>メモ</th>
+      <td><%= f.text_field :memo %></td>
+    </tr>
+  </table>
+
+</div>
+<br>
+<%= field_set_tag 'ベンダー情報管理' do %>
+<% @accnt_m.accnt_staff_ms.each do |accnt_staff_m| %>
+  <%= f.fields_for :accnt_staff_ms, accnt_staff_m do |ff| %>
+ <table>
+  <thead>
+    <tr>  
+      <th>スタッフ ID</th>
+      <td><%= ff.text_field :staff_id %></td>
+    </tr>
+    <tr> 
+      <th>担当部署名</th>
+      <td><%= ff.text_field :dept_name %></td>
+    </tr> 
+    <tr> 
+      <th>担当部署名(英語) </th>
+      <td><%= ff.text_field :dept_name_e %></td>
+    </tr>
+    <tr>  
+      <th>担当者氏名</th>
+      <td><%= ff.text_field :staff_name %></td>
+    </tr>
+    <tr>  
+      <th>担当者氏名（英語）</th>
+      <td><%= ff.text_field :staff_name_e %></td>
+    </tr>    
+  </thead>
+  </table>
+  <table>
+  <thead>
+    <tr>  
+      <th>国番号</th>
+      <td><%= ff.text_field :country_cd %></td>
+    </tr>
+    <tr>  
+      <th>郵便番号</th>
+      <td><%= ff.text_field :zip %></td>
+    </tr>
+    <tr>  
+      <th>都道府県</th>
+      <td><%= ff.text_field :prefecture_no %></td>
+    </tr>    
+    <tr>  
+      <th>市町村</th>
+      <td><%= ff.text_field :city %></td>
+    </tr>  
+    <tr> 
+      <th>丁目</th>
+      <td><%= ff.text_field :area %></td>
+    </tr> 
+    <tr> 
+      <th>ビル名</th>
+      <td><%= ff.text_field :bld %></td>
+    </tr> 
+    <tr> 
+      <th>印字住所</th>
+      <td><%= ff.text_field :print_address %></td>
+    </tr> 
+    <tr>
+      <th>印字住所(英語)</th>
+      <td><%= ff.text_field :print_address_e %></td>
+    </tr>
+    <tr> 
+      <th>電話番号</th>
+      <td><%= ff.text_field :tel %></td>
+    </tr> 
+  </thead>
+  </table>
+  <br>
+    <% end %>
+  <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

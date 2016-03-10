@@ -1,3 +1,23 @@
+.area {
+  /* boxレイアウトの指定 */
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+
+  /* 配置したボックスを左右中央寄せにする */
+  box-pack: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+
+}
+.item {
+
+  text-align: center;
+  color: #444;
+  margin: 10px;
+}
+
+
 div.header {
   margin-left:-7px;
   margin-top:-7px;
@@ -11,23 +31,19 @@ div.header {
   text-align:left;
 }
 
-table.search, table.contents-top, table.contents-buttom, table.show {
+table {
  margin-left: auto;
  margin-right: auto;
  font-size:70%;
- 
+ th {
+  background-color:gray;
+  color:white;  
+}
+ td {
+  border:1;
+ }
 }
 
-table.list {
-  font-size:60%;
-}
-
-div.content-top {
-  font-size:70%;
-}
-fieldset {
-  border:0px
-}
 
 
 
