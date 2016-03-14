@@ -18,7 +18,6 @@ class CpnMsController < ApplicationController
 
   # GET /cpn_ms/new
   def new
-    p @accnt_m.accnt_staff_ms
     @cpn_m = CpnM.new()
     @cpn_m.cpn_m_sales_cntcts.build
     @cpn_m.cpn_m_total_sales_dscnts.build

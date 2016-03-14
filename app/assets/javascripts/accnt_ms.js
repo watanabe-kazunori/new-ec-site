@@ -10,6 +10,7 @@ var count_check = "字以上の入力があります。"
 jQuery( function($) {
     $("#accnt_m_accnt_cd").blur(function(){
     	var a = $('#accnt_m_accnt_cd').val();
+    	var b = $('#accnt_m_accnt_cd').
     	if( a == ""){
     		alert(blank_check);
     	} 
