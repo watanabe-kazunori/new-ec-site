@@ -232,9 +232,8 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
-  x86-mingw32
   ruby
-
+  x86-mingw32
 
 DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)

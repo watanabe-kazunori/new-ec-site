@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160310083902) do
-#ActiveRecord::Schema.define(version: 20160307045329) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
