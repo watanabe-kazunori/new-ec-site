@@ -5,12 +5,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= yield %>
 <style type="text/css">
-<!--
 検索/検索結果一覧
--->
+
     .prd-area{
     width: 1400px;
 
