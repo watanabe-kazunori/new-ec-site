@@ -5,9 +5,9 @@
   display: -moz-box;
 
   /* 配置したボックスを左右中央寄せにする */
-  box-pack: center;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
+  box-pack: left;
+  -webkit-box-pack: left;
+  -moz-box-pack: left;
 
 }
 .item {
@@ -26,24 +26,26 @@ div.header {
   padding-left:10px;
   padding-bottom:10px;
   background-color:black;
-  font-size:50%;
   color:white;
   text-align:left;
 }
 
 table {
- margin-left: auto;
  margin-right: auto;
  font-size:70%;
  th {
+  width: 200px;
   background-color:gray;
-  color:white;  
-}
- td {
+  color:white;
+  text-align: center;
   border:1;
+ }
+
+ td {
+  width: auto;
  }
 }
 
-
-
-
+h1{
+  font-size:80%;  
+}
