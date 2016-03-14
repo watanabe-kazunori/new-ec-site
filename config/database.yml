@@ -3,8 +3,8 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  username: root
-  password: root
+  username: jrckinmu
+  password: jrckinmu
   host: localhost
 development:
   <<: *default
@@ -16,9 +16,17 @@ test:
   <<: *default
   database: new-ec-site_test
   
+# production:
+#   <<: *default
+#   database: heroku_57bcfc605ad6ee0
+#   username: b095c02bef2293
+#   password: 5aed4505
+#   host: us-cdbr-iron-east-03.cleardb.net
+
+
 production:
   <<: *default
-  database: heroku_57bcfc605ad6ee0
-  username: b095c02bef2293
-  password: 5aed4505
-  host: us-cdbr-iron-east-03.cleardb.net
+  database: fbjdb
+  username: ta
+  password: ta1070062
+  host: fbjdbinstance.cg5ejd4imhpm.us-west-2.rds.amazonaws.com
