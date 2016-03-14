@@ -1,31 +1,65 @@
-<!--
-<%= render 'layouts/header' %><br>
--->
+
+<style type="text/css">
+
+  .navi-on{
+  background-color: white;width: 200px;height: 30px;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;
+  }
+  .navi-off{
+    background-color:grey;width: 200px;height: 30px;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;
+  }
+  .body{
+    width:1300px; margin: 0 auto; height: 100%;display: table;
+  }
+
+  .navigation{
+    float:left; width: 200px; height: 100%; background-color: grey;display: table-cell;
+  }
+
+  .content{
+    float: left; min-width: 900px; height: 100%; padding-right: 10px; padding-left:10px;display: table-cell;
+  }
+  html{
+    height: 100%;
+  }
+  body{
+    height: 100%;
+  }
+</style>
+
+<div class="body">
+    <!-- header -->
+    <%= render 'layouts/header' %>
+    
+    <!-- left menu -->
+  <div class="navigation">
+
+        <h3 class="navi-off"><%= link_to 'クーポン　検索/一覧', cpn_ms_path %></h3>
+        <h3 class="navi-off"><%= link_to 'クーポン　登録', new_cpn_m_path %></h3>
+        <h3 class="navi-off"><%= link_to 'クーポン　編集', edit_cpn_m_path %></h3>
+        <h3 class="navi-on"><%= link_to 'クーポン　詳細', @cpn_m %></h3>
+  </div>
+
+  <div class="content">
 <p id="notice"><%= notice %></p>
 <h1>クーポンマスタ詳細画面</h1>
 <style type="text/css">
-.table1 {
-  border-collapse: collapse;
-  text-align:center
-}
-.table1 th {
-  background-color: #999999;
-  color:white;
+.table2{
+  border-collapse: collapse; border: 1px dotted red; table-layout: fixed; margin: 0 auto;
 }
 
-.table1 th{
- text-align:center;
-  border:1;
-  background-color: #999999;
-  color:white;
+.table2 th,td{
+  padding:0.5em; border:1px dotted green;
+}
+.table2 th{
+  color: black; background-color:#E6E6FA;
+}
+.table2 td{
+  margin: 0 auto; padding-right:20px; padding-left:20px;
 }
 </style>
-<table class="table1" border=1>
+<table class="table2">
 
-  <tr>
-  <th><strong>クーポンID:</strong></th>
-  <td><%= @cpn_m.cpn_id %></td>
-  </tr>
+
 
   <tr>
   <th><strong>クーポンコード:</strong></th>
@@ -92,6 +126,7 @@
   <td><%= @cpn_m.excld_prd_cndtn %></td>
   </tr>
 </table>
-
+<%- if false -%>
 <%= link_to '編集', edit_cpn_m_path(@cpn_m) %> |
 <%= link_to '戻る', cpn_ms_path %>
+<%- end -%>

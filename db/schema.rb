@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310083902) do
+ActiveRecord::Schema.define(version: 20160314153139) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
@@ -85,27 +85,20 @@ ActiveRecord::Schema.define(version: 20160310083902) do
     t.datetime "updated_at"
   end
 
-  create_table "cpn_m_sales_cntcts", force: :cascade do |t|
-    t.integer  "cpn_id",               limit: 4,  null: false, unsigned: true
-    t.string   "accnt_cd_sales_cntct", limit: 30, null: false
-    t.integer  "cpn_m_id",             limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+  create_table "cpn_m_sales_cntcts", primary_key: "cpn_id", force: :cascade do |t|
+    t.string  "accnt_cd_sales_cntct", limit: 30, null: false
+    t.integer "cpn_m_id",             limit: 4
   end
 
-  create_table "cpn_m_total_sales_dscnts", force: :cascade do |t|
-    t.integer  "cpn_id",                limit: 4,                          default: 0, null: false, unsigned: true
-    t.integer  "sales_range_no",        limit: 4,                          default: 0, null: false, unsigned: true
-    t.decimal  "sales_range_min_value",           precision: 20, scale: 2,             null: false
-    t.decimal  "dscnt_value",                     precision: 20, scale: 2
-    t.decimal  "dscnt_rate",                      precision: 5,  scale: 2
-    t.integer  "cpn_m_id",              limit: 4
-    t.datetime "created_at",                                                           null: false
-    t.datetime "updated_at",                                                           null: false
+  create_table "cpn_m_total_sales_dscnts", primary_key: "cpn_id", force: :cascade do |t|
+    t.integer "sales_range_no",        limit: 4,                          default: 0, null: false, unsigned: true
+    t.decimal "sales_range_min_value",           precision: 20, scale: 2,             null: false
+    t.decimal "dscnt_value",                     precision: 20, scale: 2
+    t.decimal "dscnt_rate",                      precision: 5,  scale: 2
+    t.integer "cpn_m_id",              limit: 4
   end
 
-  create_table "cpn_ms", force: :cascade do |t|
-    t.integer  "cpn_id",          limit: 4,                                         null: false, unsigned: true
+  create_table "cpn_ms", primary_key: "cpn_id", force: :cascade do |t|
     t.string   "cpn_cd",          limit: 30,                                        null: false
     t.string   "cpn_st",          limit: 1,                                         null: false
     t.string   "cpn_title",       limit: 2000,                                      null: false

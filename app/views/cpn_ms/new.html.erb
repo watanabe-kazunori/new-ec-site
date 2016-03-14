@@ -1,10 +1,46 @@
-<!--
-<%= render 'layouts/header' %>
-<br>
--->
+<html>
 
-<h1>クーポン情報登録</h1>
+<style type="text/css">
 
-<%= render 'form' %>
+  .navi-on{
+  background-color: white;width: 200px;height: 30px;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;
+  }
+  .navi-off{
+    background-color:grey;width: 200px;height: 30px;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;
+  }
+  .body{
+    width:1300px; margin: 0 auto; height: 100%;display: table;
+  }
 
-<%= link_to '戻る', cpn_ms_path %>
+  .navigation{
+    float:left; width: 200px; height: 100%; background-color: grey;display: table-cell;
+  }
+
+  .content{
+    float: left; min-width: 900px; height: 100%; padding-right: 10px; padding-left:10px;display: table-cell;
+  }
+  html{
+    height: 100%;
+  }
+  body{
+    height: 100%;
+  }
+</style>
+
+<div class="body">
+    <!-- header -->
+    <%= render 'layouts/header' %>
+    
+    <!-- left menu -->
+  <div class="navigation">
+
+        <h3 class="navi-off"><%= link_to 'クーポン　検索/一覧', cpn_ms_path %></h3>
+        <h3 class="navi-on"><%= link_to 'クーポン　登録', new_cpn_m_path %></h3>
+  </div>
+
+	<div class="content">
+		<h1>クーポン情報登録</h1>
+		<%= render 'form' %>
+	</div>
+</div>
+</html>

@@ -12,146 +12,106 @@
   <% end %>
 
 <style type="text/css">
+.table2{
+  border-collapse: collapse; border: 1px dotted red; table-layout: fixed; margin: 0 auto;
+}
 
-.table1 th{
- text-align:right;
-  border:1;
-  background-color: #999999;
-  color:white;
+.table2 th,td{
+  padding:0.5em; border:1px dotted green;
+}
+.table2 th{
+  color: black; background-color:#E6E6FA;
+}
+.table2 td{
+  margin: 0 auto; padding-right:20px; padding-left:20px;
 }
 </style>
-<table class="table1">
-  <div class="field">
+
+<table class="table2">
   <tr>
     <th><strong><%= f.label :クーポン種別 %></strong></th>
     <td>
-
- <select name="cpn_m[cpn_discnt_type]" id="cpn_discnt_type">
-   <option value="1">割引額</option>
-   <option value="2">割引率</option>
- </select>
-
+      <select name="cpn_m[cpn_discnt_type]" id="cpn_discnt_type">
+      <option value="1">割引額</option>
+      <option value="2">割引率</option>
+      </select>
     </td>
   </tr>
-  </div>
 
 
-  <div class="field">
-  <tr>
-	<th><strong> <%= f.label :ID %></strong></th>
-    <td><%= f.number_field :cpn_id %></td>
-  </tr>
-  </div>
 
-  <div class="field">
+
   <tr>
     <th><strong><%= f.label :有効・無効フラグ %></strong></th>
     <td>
     <%= f.radio_button :cpn_st, 1 , {:checked => true}%> <%= f.label :rate_1, "有効" %>
     <%= f.radio_button :cpn_st, 2 %> <%= f.label :rate_2, "無効" %>
     </td>
-
   </tr>
-  </div>
 
-  </div>
-  <div class="field">
   <tr>
     <th><strong><%= f.label :クーポンコード %></strong></th>
     <td><%= f.text_field :cpn_cd %></td>
   </tr>
-  </div>
 
-
-  <div class="field">
   <tr>
     <th><strong><%= f.label :クーポンタイトル %></strong></th>
     <td><%= f.text_field :cpn_title %></td>
   </tr>
-  </div>
 
-  <div class="field">
-<tr>
-
-    <th><strong></strong>
-
-      </th>
+  <tr>
+    <th><strong></strong></th>
     <td style="color: red"><%= f.label :' YYYY/MM/DD HH MM形式で入力してください' %></td>
+  </tr>
 
-
-
-  <div class="field">
-<tr>
-
+  <tr>
     <th><strong>有効期限</strong>
-      <%= f.label :開始日時 %></th>
+      <%= f.label :開始日時 %><br><br>
+      <%= f.label :'　　　　 終了日時' %></strong></th>
+   </th>
     <td>
 <!--
 
       <%= f.datetime_select :start_dt,{} ,class: 'form-control',value: Time.now.strftime("%Y-%m-%d") %>
   <%= f.text_field :start_dt, class: 'form-control date-picker' %>
 -->
-
-
     <%= f.date_field :start_dt %>
     <%= f.text_field :start_dt,:size=>"1" %> :
     <%= f.text_field :start_dt,:size=>"1" %>
-
-
     　　　<!--
   <div class="form-group form-inline">
     -->
-
-
-
-    ～</td>
+    <br><br>
 <!--
   <div class="form-group form-inline">
 -->
-    <th><strong><%= f.label :終了日時 %></strong></th>
-<td>    
     <%= f.date_field :expiration_dt %>
     <%= f.text_field :expiration_dt,:size=>"1" %> :
     <%= f.text_field :expiration_dt,:size=>"1" %>
     </td>
 </tr>
-</div>
 
 
-
-
-
-  <div class="field">
   <tr>
     <th><strong><%= f.label :対象 %></strong></th>
     <td>
-  <select name="cpn_m[cpn_cls]" id="cpn_cls">
-   <option value="1">単価割引</option>
-   <option value="2">総額割引</option>
-  </select>
-  </td>
+      <select name="cpn_m[cpn_cls]" id="cpn_cls">
+       <option value="1">単価割引</option>
+       <option value="2">総額割引</option>
+      </select>
+    </td>
   </tr>
-  </div>
-
-  <div class="field">
+ 
   <tr>
     <th><stong><%= f.label :対象製品条件 %></strong></th>
     <td><%= f.text_field :trgt_prd_cndtn %></td>
-
   </tr>
 
-
-  </div>
-
-  <div class="field">
   <tr>
     <th><strong><%= f.label :対象除外製品条件 %></strong></th>
     <td><%= f.text_field :excld_prd_cndtn %></td>
   </tr>
 
-  </div>
-
-  <div class="field">
   <tr>
     <th><strong><%= f.label :ベンダー仕切割引 %></strong></th>
     <td>
@@ -162,51 +122,95 @@
  <!--   <td><%= f.text_field :vndr_cpn %></td> -->
   </tr>
 
-  </div>
-  <div class="field">
-  <tr>
+   <tr>
     <th><strong><%= f.label :使用回数 %></strong></th>
     <td><%= f.text_field :use_limit %></td>
   </tr>
-  </div>
-
-  </div>
-  <div class="field">
-  <tr>
+  
+   <tr>
     <th><strong><%= f.label :販売先コード %></strong></th>
 　   <td>
       <%= f.fields_for :cpn_m_sales_cntcts do |f2| %>
         <%= f2.text_field :accnt_cd_sales_cntct %>
  
-        <%= f2.number_field :cpn_id %>
+
 
       <% end %>
 　   </td>
   </tr>
-  </div>
-
-  </div>
-  <div class="field">
+  
   <tr>
     <th><strong><%= f.label :メモ欄 %></strong></th>
     <td><%= f.text_field :memo %></td>
   </tr>
-  </div>
-
-
+  
 </table>
 
 <style type="text/css">
+  
+  .area {
+  /* boxレイアウトの指定 */
+  display: box; display: -webkit-box; display: -moz-box;
 
-.table2 th{
- text-align:center;
-  border:1;
-  background-color: #999999;
-  color:white;
+  /* 配置したボックスを左右中央寄せにする */
+  box-pack: center; -webkit-box-pack: center; -moz-box-pack: center;
 }
+
+.table1{
+  text-align: center;border-collapse: collapse; border: 1px solid black;margin: 10px;
+}
+
+.table1 th{
+  padding:0.5em; border:1px solid black; color: white; background-color:grey;
+
+}
+.table1 td{
+  border:1px solid black; padding-right:20px; padding-left:20px;
+}
+
+
 </style>
+
+  <div class="area">
+  <table class="table1">
+    <tr>
+    <h3>単価割引設定</h3>
+    </tr>
+    <tr>
+      <th><strong><%= f.label :割引額・率 %></strong></th>
+    </tr>
+    <tr>
+      <td><%= f.number_field :dscnt_value %></td>
+            <%= f.fields_for :cpn_m_total_sales_dscnts do |f3| %>
+    </tr>
+  </table>
+  <% end %>
+</div>
+<!--
+  <div class="area">
+  <table class="table1">
+
+  <tr>
+    <h3>注文総額割引設定</h3>
+  </tr>
+    <tr>
+    <th><strong><%= f.label :注文総額価格帯 %></strong></th>
+    <th><strong><%= f.label :割引額・率 %></strong></th>
+    </tr>
+    <tr>
+    <td>aaa</td>
+
+    </tr>
+  </table>
+
+
+</div>
+-->
+
+<%- if false -%>
+<!-- コメントアウトしてます　-->
 <table class="table2">
-<h3>単価割引設定　　　　　　　　　注文総額割引設定</h3>
+<h3 style="text-align: center;">単価割引設定　　　　　　　　　注文総額割引設定</h3>
     <tr>
     <th><strong><%= f.label :割引額・率 %></strong></th>
     <th><strong><%= f.label :注文総額価格帯 %></strong></th>
@@ -246,11 +250,13 @@
 -->
 </table>
 
-
-  <div class="actions">
-
-    <%= f.submit %>
-  </div>
+<%- end -%>
+<br>
+      <table style="align:center;margin: 0 auto;text-align: center;">
+        <tr>
+            <td style="align:center;float: left;border: none;"><%= f.submit %></td>
+        </tr>
+      </table>
 
 
 <% end %>
