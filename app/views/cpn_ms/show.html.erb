@@ -12,11 +12,11 @@
   }
 
   .navigation{
-    float:left; width: 200px; height: 100%; background-color: grey;display: table-cell;
+    float:left; width: 200px; min-height: 700px; background-color: grey;display: table-cell;
   }
 
   .content{
-    float: left; min-width: 900px; height: 100%; padding-right: 10px; padding-left:10px;display: table-cell;
+    float: left; min-width: 400px; height: 100%; padding-right: 10px; padding-left:10px;display: table-cell;
   }
   html{
     height: 100%;
@@ -44,7 +44,7 @@
 <h1>クーポンマスタ詳細画面</h1>
 <style type="text/css">
 .table2{
-  border-collapse: collapse; border: 1px dotted red; table-layout: fixed; margin: 0 auto;
+  border-collapse: collapse; border: 1px dotted red; table-layout: fixed;
 }
 
 .table2 th,td{
@@ -59,7 +59,10 @@
 </style>
 <table class="table2">
 
-
+  <tr>
+  <th><strong>クーポンID:</strong></th>
+  <td><%= @cpn_m.cpn_id %></td>
+  </tr>
 
   <tr>
   <th><strong>クーポンコード:</strong></th>

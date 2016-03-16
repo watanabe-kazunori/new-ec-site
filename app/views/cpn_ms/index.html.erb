@@ -16,7 +16,7 @@
 }
 
 .table2{
-  border-collapse: collapse; border: 1px dotted red; table-layout: fixed; margin: 0 auto;
+  border-collapse: collapse; border: 1px dotted red; table-layout: fixed;
 }
 
 .table2 th,td{
@@ -38,11 +38,11 @@
   }
 
   .navigation{
-    float:left; width: 200px; height: 100%; background-color: grey;display: table-cell;
+    float:left; width: 200px; min-height: 700px; background-color: grey;display: table-cell;
   }
 
   .content{
-    float: left; max-width: 900px; height: 100%; padding-right: 10px; padding-left:10px;display: table-cell;
+    float: left; min-width: 400px; height: 100%; padding-right: 10px; padding-left:10px;display: table-cell;
   }
   html{
     height: 100%;
@@ -81,6 +81,7 @@
           <td>
           <select name="cpn_m[cpn_discnt_type]" id="cpn_discnt_type" style="width: 100%">
             <option value =""></option>
+      　　　　　<option value="0">すべて</option>
             <option value="1">割引額 </option>
             <option value="2">割引率</option>
           </select>
@@ -91,6 +92,7 @@
               <td>
               <select name="cpn_m[cpn_st]" id="cpn_st" style="width: 100%">
                 <option value =""></option>
+      　　　　　　　　<option value="2">すべて</option>                
                 <option value="1">有効</option>
                 <option value="0">無効</option>
               </select>    

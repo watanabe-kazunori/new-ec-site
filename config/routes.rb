@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :stocks
+  resources :pos
+  resources :pos
+  resources :stocks
+  resources :dstrbtr_cstmrs
+  resources :sales_accnt_ms
   resources :sys_settings
   resources :serial_ms
   resources :prd_ms

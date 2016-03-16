@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314153139) do
+ActiveRecord::Schema.define(version: 20160315113149) do
 
   create_table "accnt_ms", id: false, force: :cascade do |t|
     t.string   "accnt_cd",        limit: 30,   null: false
@@ -127,6 +127,51 @@ ActiveRecord::Schema.define(version: 20160314153139) do
     t.datetime "updated_at"
   end
 
+  create_table "dstrbtr_cstmrs", force: :cascade do |t|
+    t.string   "dstrbtr_cd", limit: 255
+    t.string   "cstmr_cd",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "pos", force: :cascade do |t|
+    t.string   "po_no",               limit: 30,                                        null: false
+    t.string   "accnt_cd_vndr",       limit: 30,                                        null: false
+    t.string   "po_type",             limit: 1,                                         null: false
+    t.string   "po_prd_type",         limit: 1,                                         null: false
+    t.string   "emp_no_po",           limit: 30,                                        null: false
+    t.datetime "po_create_date"
+    t.datetime "po_date"
+    t.string   "po_st",               limit: 1
+    t.string   "so_no",               limit: 30
+    t.datetime "so_date"
+    t.datetime "so_pay_cnfrmtn_date"
+    t.string   "currency_cd",         limit: 4,                                         null: false
+    t.decimal  "ttl_amnt_excld_tax",               precision: 20, scale: 2
+    t.decimal  "tax_rate",                         precision: 5,  scale: 2
+    t.decimal  "tax",                              precision: 20, scale: 2
+    t.decimal  "dlvry_fee",                        precision: 20, scale: 2
+    t.decimal  "ttl_amnt_incld_tax",               precision: 20, scale: 2
+    t.string   "pay_mthd",            limit: 1
+    t.datetime "pay_due_date"
+    t.string   "prd_dlvry_type",      limit: 1
+    t.string   "dlvry_term",          limit: 100
+    t.datetime "dlvry_end_date"
+    t.string   "dlvry_atntn",         limit: 50
+    t.string   "dlvry_adrs",          limit: 2000
+    t.string   "dlvry_tel",           limit: 20
+    t.string   "dlvry_email",         limit: 50
+    t.string   "web_po_optn",         limit: 2000
+    t.string   "web_po_pay_mthd",     limit: 1
+    t.integer  "web_po_card_used",    limit: 4,                             default: 0,              unsigned: true
+    t.datetime "rgstr_dt"
+    t.integer  "rgstr_usr",           limit: 4,                             default: 0,              unsigned: true
+    t.datetime "lst_upd_dt"
+    t.integer  "lst_upd_usr",         limit: 4,                             default: 0,              unsigned: true
+    t.datetime "created_at",                                                            null: false
+    t.datetime "updated_at",                                                            null: false
+  end
+
   create_table "prd_ms", primary_key: "sku", force: :cascade do |t|
     t.string   "sku_dvlpr",                  limit: 30
     t.string   "sku_source_prd",             limit: 30
@@ -181,6 +226,43 @@ ActiveRecord::Schema.define(version: 20160314153139) do
     t.datetime "updated_at"
   end
 
+  create_table "sales_accnt_ms", force: :cascade do |t|
+    t.string   "sales_accnt_cd",           limit: 255
+    t.string   "sales_accnt_st",           limit: 255
+    t.string   "sales_accnt_type",         limit: 255
+    t.string   "cstmr_type",               limit: 255
+    t.string   "cmpny_name",               limit: 255
+    t.string   "cmpny_name_e",             limit: 255
+    t.string   "dept_name",                limit: 255
+    t.string   "dept_name_e",              limit: 255
+    t.string   "person_name",              limit: 255
+    t.string   "person_name_e",            limit: 255
+    t.string   "emp_no_sales",             limit: 255
+    t.string   "country_cd",               limit: 255
+    t.string   "zip",                      limit: 255
+    t.string   "prefecture_no",            limit: 255
+    t.string   "city",                     limit: 255
+    t.string   "area",                     limit: 255
+    t.string   "bld",                      limit: 255
+    t.string   "print_address",            limit: 255
+    t.string   "print_address_e",          limit: 255
+    t.string   "tel",                      limit: 255
+    t.string   "fax",                      limit: 255
+    t.string   "email",                    limit: 255
+    t.string   "bill_close_date",          limit: 255
+    t.integer  "pay_date",                 limit: 4
+    t.string   "news_dlvry_f",             limit: 255
+    t.date     "rgstrtn_date"
+    t.string   "pttrn_cd",                 limit: 255
+    t.date     "cntrct_start_date"
+    t.date     "cntrct_renewal_date"
+    t.date     "cntrct_next_renewal_date"
+    t.date     "cntrct_end_date"
+    t.string   "memo",                     limit: 255
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
   create_table "serial_ms", force: :cascade do |t|
     t.integer  "serial_id",                  limit: 4,    null: false, unsigned: true
     t.string   "sku",                        limit: 30,   null: false
@@ -212,6 +294,18 @@ ActiveRecord::Schema.define(version: 20160314153139) do
     t.integer  "lst_upd_usr",                limit: 4,                 unsigned: true
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string   "sku",                limit: 30,             null: false
+    t.string   "stock_prd_type",     limit: 1,              null: false
+    t.integer  "rsrvd_qty",          limit: 4,  default: 0, null: false, unsigned: true
+    t.integer  "free_qty",           limit: 4,  default: 0, null: false, unsigned: true
+    t.integer  "ttl_qty",            limit: 4,  default: 0, null: false, unsigned: true
+    t.integer  "strndrd_stock_qty",  limit: 4,  default: 0,              unsigned: true
+    t.integer  "cnsgmnt_serial_qty", limit: 4,  default: 0,              unsigned: true
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "sys_settings", primary_key: "company_name", force: :cascade do |t|

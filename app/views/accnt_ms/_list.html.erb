@@ -1,5 +1,4 @@
 <%= search_form_for @search do |s| %>
-<box>
   <table class="search">
     <tr>
         <th>ベンダーコード</th>
@@ -34,12 +33,11 @@
     </tr>
   </table>
     <div align="center"><%= s.submit %></div>
-</box>
 <% end %>
 <div class="sub-menu"><h1>検索結果一覧</h1></div>
 
 <%= paginate(@accnt_ms) %>
-<box>
+
 <table border=1>
   <thead>
     <tr>
@@ -98,5 +96,5 @@
     <% end %>
   </tbody>
 </table>
-</box>
+
 <%= page_entries_info(@accnt_ms) %>

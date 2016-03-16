@@ -13,7 +13,7 @@
 
 <style type="text/css">
 .table2{
-  border-collapse: collapse; border: 1px dotted red; table-layout: fixed; margin: 0 auto;
+  border-collapse: collapse; border: 1px dotted red; table-layout: fixed;
 }
 
 .table2 th,td{
@@ -37,9 +37,12 @@
       </select>
     </td>
   </tr>
-
-
-
+<!--
+  <tr>
+  	<th><strong> <%= f.label :ID %></strong></th>
+      <td><%= f.number_field :cpn_id %></td>
+    </tr>
+-->
 
   <tr>
     <th><strong><%= f.label :有効・無効フラグ %></strong></th>
@@ -132,9 +135,9 @@
 　   <td>
       <%= f.fields_for :cpn_m_sales_cntcts do |f2| %>
         <%= f2.text_field :accnt_cd_sales_cntct %>
- 
-
-
+ <!--
+        <%= f2.number_field :cpn_id %>
+-->
       <% end %>
 　   </td>
   </tr>

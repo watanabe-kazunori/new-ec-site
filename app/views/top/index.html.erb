@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-<image alt="FBJ" src='/assets/logo_fbj.png' />
+    <%= image_tag("logo_fbj.png") %>  
 </div>
 
 <div style="height: 10px;background-color:black;"></div>
@@ -20,50 +20,78 @@
       <div style=" background-color:#727171; height:1px"></div>
       <br>
       
+      <table>
+      <td>
       <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
-    	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to 'ベンダー情報管理', accnt_ms_path %>
+      <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to 'ベンダー情報管理', accnt_ms_path %>
+        <td>2016/03/10登録</td>
         </div>
       </div>
+      </table> 
 
+      <table>
+      <td>
     	<div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
     	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to 'クーポン情報管理', cpn_ms_path %>
-        </div>
-    	</div>
-    	
-      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
-    	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to '製品情報管理', prd_ms_path %>
-        </div>
-   	  </div>
-
-      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
-     	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to 'シリアル情報管理', serial_ms_path %>
+        <td>2016/03/10登録</td>
         </div>
       </div>
+      </table> 
+    	
+      <table>
+      <td>
+      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
+    	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to '製品情報管理', prd_ms_path %>
+        <td>2016/03/10登録</td>
+        </div>
+      </div>
+      </table> 
+
+
+      <table>
+      <td>
+      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
+     	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to 'シリアル情報管理', serial_ms_path %>
+        <td>2016/03/10登録</td>
+        </div>
+      </div>
+      </table> 
     	      	  
     	<br>
       <br>
-      <br>
-      <以下のマスタはテストデータ投入用のため画面の編集は行いません>
+
       <table>
+      <td>
+      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
+        <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to '発注管理', pos_path %>
+        <td>2016/03/16登録</td>
+        </div>
+      </div>
+      </table> 
+    
+      <table>
+      <td>
+      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
+        <div style="padding-top: 15px;padding-left: 3px;font-size: 30px"><%= link_to '在庫管理', stocks_path %></td>
+      <td>2016/03/16登録</td>
+      </div>
+      </div>
+      </table> 
+
+
+
+
+      <br>
+      <table>
+      <以下のマスタはテストデータ投入用のため画面の編集は行っておりません>
       <tr>
       <td><div style="width: 200px;background-color: #DCDDDD;height: 35px;margin-bottom: 5px;">
         <div style="padding-top: 15px;padding-left: 3px;font-size: 20px"><%= link_to 'システム設定R', sys_settings_path %></td>
-      <td>2016/03/10追加</td>
+      <td>2016/03/16追加</td>
 
         </div>
       </div>
-      <tr>
-      </table>
-
- 
-      <br>
-
-      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
-     	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px">発注管理</div>
-    	</div>
-    	
-      <div style="width: 300px;background-color: #DCDDDD;height: 50px;margin-bottom: 5px;">
-    	  <div style="padding-top: 15px;padding-left: 3px;font-size: 30px">在庫管理</div>
-    	</div>
+      </tr>
+      </table> 
 
 </div>
